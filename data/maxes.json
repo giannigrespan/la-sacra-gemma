@@ -1,0 +1,48 @@
+{
+  "bodyweight": 83,
+  "asOf": "2026-10-27",
+  "maxes": [
+    {
+      "name": "Rematore",
+      "weight": 90,
+      "reps": 3,
+      "date": "2026-10-27"
+    },
+    {
+      "name": "Floor press",
+      "weight": 85,
+      "reps": 5,
+      "date": "2026-10-27"
+    },
+    {
+      "name": "Squat frontale",
+      "weight": 60,
+      "reps": 5,
+      "date": "2026-10-27"
+    },
+    {
+      "name": "Military press",
+      "weight": 60,
+      "reps": 5,
+      "date": "2026-10-27"
+    },
+    {
+      "name": "Trazioni",
+      "weight": 91,
+      "reps": 5,
+      "date": "2026-10-27"
+    },
+    {
+      "name": "Box squat",
+      "weight": 120,
+      "reps": 5,
+      "date": "2026-10-27"
+    },
+    {
+      "name": "Stacco",
+      "weight": 140,
+      "reps": 1,
+      "date": "2026-10-27"
+    }
+  ]
+}
