@@ -1,3 +1,379 @@
 {
-  "workouts": []
+  "workouts": [
+    {
+      "date": "2026-10-19",
+      "exercises": [
+        {
+          "name": "Rematore",
+          "sets": [
+            {
+              "reps": 5,
+              "weight": 70,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 70,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 70,
+              "rpe": null
+            }
+          ],
+          "notes": ""
+        },
+        {
+          "name": "Curl con Ez bar",
+          "sets": [
+            {
+              "reps": 8,
+              "weight": 20,
+              "rpe": null
+            },
+            {
+              "reps": 8,
+              "weight": 20,
+              "rpe": null
+            },
+            {
+              "reps": 8,
+              "weight": 20,
+              "rpe": null
+            }
+          ],
+          "notes": ""
+        },
+        {
+          "name": "Floor press",
+          "sets": [
+            {
+              "reps": 3,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 80,
+              "rpe": null
+            }
+          ],
+          "notes": ""
+        },
+        {
+          "name": "Trazioni (kg aggiunti)",
+          "sets": [
+            {
+              "reps": 3,
+              "weight": 0,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 0,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 0,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 0,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 0,
+              "rpe": null
+            }
+          ],
+          "notes": "kg aggiunti al peso corporeo"
+        },
+        {
+          "name": "Box squat",
+          "sets": [
+            {
+              "reps": 3,
+              "weight": 100,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 100,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 100,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 100,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 100,
+              "rpe": null
+            }
+          ],
+          "notes": ""
+        }
+      ],
+      "notes": "",
+      "totalVolume": 4550,
+      "avgIntensity": 0,
+      "analysis": ""
+    },
+    {
+      "date": "2026-10-21",
+      "exercises": [
+        {
+          "name": "Curl con Ez bar",
+          "sets": [
+            {
+              "reps": 8,
+              "weight": 35,
+              "rpe": null
+            },
+            {
+              "reps": 8,
+              "weight": 35,
+              "rpe": null
+            },
+            {
+              "reps": 8,
+              "weight": 35,
+              "rpe": null
+            }
+          ],
+          "notes": ""
+        },
+        {
+          "name": "Military press",
+          "sets": [
+            {
+              "reps": 5,
+              "weight": 50,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 50,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 50,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 50,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 50,
+              "rpe": null
+            }
+          ],
+          "notes": ""
+        },
+        {
+          "name": "Trazioni (kg aggiunti)",
+          "sets": [
+            {
+              "reps": 3,
+              "weight": 8,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 8,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 8,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 8,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 8,
+              "rpe": null
+            }
+          ],
+          "notes": "kg aggiunti al peso corporeo"
+        },
+        {
+          "name": "Stacco",
+          "sets": [
+            {
+              "reps": 3,
+              "weight": 110,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 110,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 110,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 110,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 110,
+              "rpe": null
+            }
+          ],
+          "notes": ""
+        }
+      ],
+      "notes": "Peso corporeo 82 kg, sonno 7 h, energia 9/10",
+      "totalVolume": 4520,
+      "avgIntensity": 7,
+      "analysis": ""
+    },
+    {
+      "date": "2026-10-23",
+      "exercises": [
+        {
+          "name": "Squat frontale",
+          "sets": [
+            {
+              "reps": 4,
+              "weight": 50,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 50,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 50,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 50,
+              "rpe": null
+            }
+          ],
+          "notes": ""
+        },
+        {
+          "name": "Military press",
+          "sets": [
+            {
+              "reps": 4,
+              "weight": 45,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 45,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 45,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 45,
+              "rpe": null
+            }
+          ],
+          "notes": ""
+        },
+        {
+          "name": "Salita sul blocco con bilanciere",
+          "sets": [
+            {
+              "reps": 6,
+              "weight": 40,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 40,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 40,
+              "rpe": null
+            }
+          ],
+          "notes": ""
+        },
+        {
+          "name": "Stacco",
+          "sets": [
+            {
+              "reps": 4,
+              "weight": 100,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 100,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 100,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 100,
+              "rpe": null
+            }
+          ],
+          "notes": ""
+        }
+      ],
+      "notes": "",
+      "totalVolume": 3840,
+      "avgIntensity": 0,
+      "analysis": ""
+    }
+  ]
 }
