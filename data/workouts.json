@@ -374,6 +374,189 @@
       "totalVolume": 3840,
       "avgIntensity": 0,
       "analysis": ""
+    },
+    {
+      "date": "2026-10-26",
+      "exercises": [
+        {
+          "name": "Stacco",
+          "sets": [
+            {
+              "reps": 4,
+              "weight": 110,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 110,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 110,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 110,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 110,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 110,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 110,
+              "rpe": null
+            }
+          ],
+          "notes": ""
+        },
+        {
+          "name": "Double kettlebell press",
+          "sets": [
+            {
+              "reps": 1,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 1,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 1,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 1,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 1,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            }
+          ],
+          "notes": "2 KB da 24 kg (peso = totale 48 kg), ladder 1-2-3 x 5 giri"
+        },
+        {
+          "name": "Trazioni (kg aggiunti)",
+          "sets": [
+            {
+              "reps": 5,
+              "weight": 0,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 0,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 0,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 0,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 0,
+              "rpe": null
+            }
+          ],
+          "notes": "a corpo libero"
+        },
+        {
+          "name": "Suitcase deadlift",
+          "sets": [
+            {
+              "reps": 10,
+              "weight": 32,
+              "rpe": null
+            },
+            {
+              "reps": 10,
+              "weight": 32,
+              "rpe": null
+            },
+            {
+              "reps": 10,
+              "weight": 32,
+              "rpe": null
+            }
+          ],
+          "notes": "KB 32 kg, 5 ripetizioni per lato (10 per serie)"
+        }
+      ],
+      "notes": "",
+      "totalVolume": 5700,
+      "avgIntensity": 0,
+      "analysis": "Volume totale 5.700 kg: stacco 3.300, double KB press 1.440, suitcase deadlift 960 (trazioni a corpo libero non contano nel volume). Stacco: 110 kg sono circa il 79% del tuo massimale di 140 kg. Hai fatto 30 ripetizioni contro le 21 del 21 ottobre allo stesso carico (+43% di volume), con due serie da 5: ottimo segnale. Double KB press: 30 ripetizioni per braccio con 24 kg, buon lavoro di volume per la spinta sopra la testa. Trazioni: 25 ripetizioni a corpo libero contro le 15 del 19 ottobre. Suitcase deadlift 32 kg 3x5 per lato, lavoro solido per il core. Suggerimenti: sullo stacco punta a 5 ripetizioni in tutte le serie a 110 kg prima di passare a 112,5 kg; sulla KB press prova la ladder 1-2-3-4; sulle trazioni puoi tornare alla zavorra con +2,5/5 kg."
     }
   ]
 }
