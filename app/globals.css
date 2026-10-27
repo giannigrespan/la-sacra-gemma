@@ -276,6 +276,7 @@ h2 {
 }
 
 .analysis p {
+  color: var(--text);
   font-size: 1.05rem;
   line-height: 1.55;
   max-width: 72ch;

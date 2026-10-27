@@ -35,7 +35,13 @@ function formatShortDate(iso) {
 }
 
 function formatNumber(value) {
-  return Number(value || 0).toLocaleString('it-IT', { maximumFractionDigits: 1 });
+  const n = Number(value);
+  if (!Number.isFinite(n)) return '—';
+  const sign = n < 0 ? '-' : '';
+  const rounded = Math.round(Math.abs(n) * 10) / 10;
+  const [whole, frac] = rounded.toFixed(1).split('.');
+  const grouped = whole.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  return `${sign}${grouped}${frac === '0' ? '' : `,${frac}`}`;
 }
 
 function exerciseVolume(exercise) {
@@ -139,7 +145,7 @@ export default function Home() {
                   <YAxis
                     stroke="#b4b4b8"
                     tick={{ fill: '#b4b4b8', fontSize: 12 }}
-                    width={52}
+                    width={64}
                     axisLine={false}
                     tickLine={false}
                     tickFormatter={(value) => formatNumber(value)}
