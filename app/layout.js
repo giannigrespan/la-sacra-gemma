@@ -29,7 +29,13 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="it" className={`${oswald.variable} ${sourceSans.variable}`}>
-      <body>{children}</body>
+      <body>
+        <div className="scene" aria-hidden="true">
+          <div className="scene-photo" />
+          <div className="scene-scrim" />
+        </div>
+        {children}
+      </body>
     </html>
   );
 }
