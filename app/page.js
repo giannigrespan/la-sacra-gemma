@@ -129,8 +129,8 @@ export default function Home() {
                 <AreaChart data={chartData} margin={{ top: 12, right: 8, left: 0, bottom: 0 }}>
                   <defs>
                     <linearGradient id="volumeFill" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#ff4d1c" stopOpacity={0.38} />
-                      <stop offset="100%" stopColor="#ff4d1c" stopOpacity={0} />
+                      <stop offset="0%" stopColor="#10b981" stopOpacity={0.38} />
+                      <stop offset="100%" stopColor="#10b981" stopOpacity={0} />
                     </linearGradient>
                   </defs>
                   <CartesianGrid stroke="rgba(255,255,255,0.06)" vertical={false} />
@@ -150,16 +150,16 @@ export default function Home() {
                     tickLine={false}
                     tickFormatter={(value) => formatNumber(value)}
                   />
-                  <Tooltip content={<VolumeTooltip />} cursor={{ stroke: 'rgba(255,77,28,0.45)', strokeWidth: 1 }} />
+                  <Tooltip content={<VolumeTooltip />} cursor={{ stroke: 'rgba(16,185,129,0.45)', strokeWidth: 1 }} />
                   <Area
                     type="monotone"
                     dataKey="volume"
                     name="Volume"
-                    stroke="#ff4d1c"
+                    stroke="#10b981"
                     strokeWidth={3}
                     fill="url(#volumeFill)"
-                    dot={{ r: 4, fill: '#ff4d1c', stroke: '#0a0a0b', strokeWidth: 2 }}
-                    activeDot={{ r: 6, fill: '#fff4ef', stroke: '#ff4d1c', strokeWidth: 2 }}
+                    dot={{ r: 4, fill: '#10b981', stroke: '#0a0a0b', strokeWidth: 2 }}
+                    activeDot={{ r: 6, fill: '#ecfdf5', stroke: '#10b981', strokeWidth: 2 }}
                   />
                 </AreaChart>
               </ResponsiveContainer>

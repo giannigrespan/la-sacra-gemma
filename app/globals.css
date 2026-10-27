@@ -6,8 +6,8 @@
   --line-strong: rgba(255, 255, 255, 0.16);
   --text: #f6f4f2;
   --muted: #c2c0bc;
-  --accent: #ff4d1c;
-  --accent-soft: rgba(255, 77, 28, 0.12);
+  --accent: #10b981;
+  --accent-soft: rgba(16, 185, 129, 0.12);
   --shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
   --radius: 18px;
   color-scheme: dark;
@@ -26,8 +26,8 @@ html {
 body {
   font-family: var(--font-source), 'Source Sans 3', system-ui, sans-serif;
   background:
-    radial-gradient(900px 420px at 100% -10%, rgba(255, 77, 28, 0.18), transparent 55%),
-    radial-gradient(700px 380px at -15% 8%, rgba(255, 77, 28, 0.08), transparent 50%),
+    radial-gradient(900px 420px at 100% -10%, rgba(16, 185, 129, 0.18), transparent 55%),
+    radial-gradient(700px 380px at -15% 8%, rgba(16, 185, 129, 0.08), transparent 50%),
     var(--bg);
   color: var(--text);
   min-height: 100vh;
@@ -240,8 +240,8 @@ h2 {
   display: inline-block;
   margin-top: 0.85rem;
   background: var(--accent-soft);
-  color: #ffd2c4;
-  border: 1px solid rgba(255, 77, 28, 0.4);
+  color: #d1fae5;
+  border: 1px solid rgba(16, 185, 129, 0.4);
   border-radius: 999px;
   padding: 0.2rem 0.7rem;
   font-weight: 700;
@@ -256,7 +256,7 @@ h2 {
 .analysis {
   margin-top: 0.95rem;
   background: var(--accent-soft);
-  border: 1px solid rgba(255, 77, 28, 0.38);
+  border: 1px solid rgba(16, 185, 129, 0.38);
   border-radius: 14px;
   padding: 0.85rem 0.9rem 0.95rem;
 }
@@ -398,12 +398,12 @@ tbody tr:nth-child(even) {
 @media (hover: hover) and (pointer: fine) {
   .session:hover,
   .stat:hover {
-    border-color: rgba(255, 77, 28, 0.55);
+    border-color: rgba(16, 185, 129, 0.55);
     transform: translateY(-2px);
   }
 
   tbody tr:hover {
-    background: rgba(255, 77, 28, 0.08);
+    background: rgba(16, 185, 129, 0.08);
   }
 }
 
