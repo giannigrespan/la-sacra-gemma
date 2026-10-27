@@ -486,6 +486,15 @@ export default function Home() {
           )}
         </section>
       </main>
+
+      <footer className="site-footer">
+        <a
+          href="https://www.pexels.com/photo/barbell-and-kettle-bell-on-a-black-mat-6628962/"
+          rel="noreferrer"
+        >
+          Foto: Arturo EG / Pexels
+        </a>
+      </footer>
     </div>
   );
 }

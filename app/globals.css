@@ -21,21 +21,59 @@
 
 html {
   color-scheme: dark;
+  background: var(--bg);
+  min-height: 100%;
 }
 
 body {
   font-family: var(--font-source), 'Source Sans 3', system-ui, sans-serif;
-  background:
-    radial-gradient(900px 420px at 100% -10%, rgba(16, 185, 129, 0.18), transparent 55%),
-    radial-gradient(700px 380px at -15% 8%, rgba(16, 185, 129, 0.08), transparent 50%),
-    var(--bg);
+  background: transparent;
   color: var(--text);
   min-height: 100vh;
   line-height: 1.5;
-  padding: 1.1rem 1rem 3.5rem;
+  padding: 1.1rem 1rem 2.4rem;
+}
+
+.scene {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.scene-photo {
+  position: absolute;
+  inset: 0;
+  background-color: var(--bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 72% center;
+  background-image: url('/bg/hero-mobile.jpg');
+  background-image: image-set(
+    url('/bg/hero-mobile.webp') type('image/webp'),
+    url('/bg/hero-mobile.jpg') type('image/jpeg')
+  );
+}
+
+.scene-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 10, 11, 0.86) 0%,
+      rgba(10, 10, 11, 0.78) 14%,
+      rgba(10, 10, 11, 0.70) 42%,
+      rgba(10, 10, 11, 0.76) 72%,
+      rgba(10, 10, 11, 0.90) 100%
+    ),
+    radial-gradient(90% 50% at 100% 100%, rgba(16, 185, 129, 0.16), transparent 56%),
+    radial-gradient(62% 38% at 0% 0%, rgba(16, 185, 129, 0.09), transparent 50%);
 }
 
 .wrap {
+  position: relative;
+  z-index: 1;
   max-width: 1040px;
   margin: 0 auto;
 }
@@ -94,11 +132,15 @@ h2 {
 
 .stat,
 .panel,
-.session {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 28%), var(--card);
+.session,
+.record-card,
+.empty {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent 30%), rgba(22, 22, 26, 0.92);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .stat {
@@ -143,6 +185,7 @@ h2 {
 .chart-panel {
   margin-top: 0.9rem;
   padding: 1.05rem 0.55rem 0.7rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 28%), rgba(16, 16, 19, 0.94);
 }
 
 .panel-head {
@@ -370,12 +413,28 @@ tbody tr:nth-child(even) {
 
 .empty {
   color: var(--muted);
-  background: var(--card);
-  border: 1px dashed var(--line-strong);
-  border-radius: var(--radius);
+  border-style: dashed;
+  border-color: var(--line-strong);
   padding: 2rem 1.2rem;
   text-align: center;
   font-size: 1.05rem;
+}
+
+.site-footer {
+  margin-top: 2.2rem;
+  text-align: right;
+}
+
+.site-footer a {
+  color: #9c9a96;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--text);
 }
 
 .sr-only {
@@ -422,7 +481,17 @@ tbody tr:nth-child(even) {
 
 @media (min-width: 760px) {
   body {
-    padding: 2.2rem 1.5rem 4.5rem;
+    padding: 2.2rem 1.5rem 3rem;
+  }
+
+  .scene-photo {
+    background-position: center center;
+    background-attachment: fixed;
+    background-image: url('/bg/hero.jpg');
+    background-image: image-set(
+      url('/bg/hero.webp') type('image/webp'),
+      url('/bg/hero.jpg') type('image/jpeg')
+    );
   }
 
   .hero {
@@ -552,9 +621,6 @@ tbody tr:nth-child(even) {
 }
 
 .record-card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 28%), var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
   padding: 0.9rem 0.95rem 1rem;
 }
 
@@ -738,5 +804,27 @@ tbody tr:nth-child(even) {
 
   .record-list {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .scene-photo {
+    background-attachment: scroll;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .stat,
+  .panel,
+  .session,
+  .record-card,
+  .empty {
+    background: var(--card);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .chart-panel {
+    background: var(--card);
   }
 }
