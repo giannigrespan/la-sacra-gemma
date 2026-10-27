@@ -77,35 +77,35 @@
           "notes": ""
         },
         {
-          "name": "Trazioni (kg aggiunti)",
+          "name": "Trazioni",
           "sets": [
             {
               "reps": 3,
-              "weight": 0,
+              "weight": 83,
               "rpe": null
             },
             {
               "reps": 3,
-              "weight": 0,
+              "weight": 83,
               "rpe": null
             },
             {
               "reps": 3,
-              "weight": 0,
+              "weight": 83,
               "rpe": null
             },
             {
               "reps": 3,
-              "weight": 0,
+              "weight": 83,
               "rpe": null
             },
             {
               "reps": 3,
-              "weight": 0,
+              "weight": 83,
               "rpe": null
             }
           ],
-          "notes": "kg aggiunti al peso corporeo"
+          "notes": "peso corporeo 83 kg + zavorra 0 kg"
         },
         {
           "name": "Box squat",
@@ -140,7 +140,7 @@
         }
       ],
       "notes": "",
-      "totalVolume": 4550,
+      "totalVolume": 5795,
       "avgIntensity": 0,
       "analysis": ""
     },
@@ -200,35 +200,35 @@
           "notes": ""
         },
         {
-          "name": "Trazioni (kg aggiunti)",
+          "name": "Trazioni",
           "sets": [
             {
               "reps": 3,
-              "weight": 8,
+              "weight": 91,
               "rpe": null
             },
             {
               "reps": 3,
-              "weight": 8,
+              "weight": 91,
               "rpe": null
             },
             {
               "reps": 3,
-              "weight": 8,
+              "weight": 91,
               "rpe": null
             },
             {
               "reps": 3,
-              "weight": 8,
+              "weight": 91,
               "rpe": null
             },
             {
               "reps": 3,
-              "weight": 8,
+              "weight": 91,
               "rpe": null
             }
           ],
-          "notes": "kg aggiunti al peso corporeo"
+          "notes": "peso corporeo 83 kg + zavorra 8 kg"
         },
         {
           "name": "Stacco",
@@ -263,7 +263,7 @@
         }
       ],
       "notes": "Peso corporeo 82 kg, sonno 7 h, energia 9/10",
-      "totalVolume": 4520,
+      "totalVolume": 5765,
       "avgIntensity": 7,
       "analysis": ""
     },
@@ -501,35 +501,35 @@
           "notes": "2 KB da 24 kg (peso = totale 48 kg), ladder 1-2-3 x 5 giri"
         },
         {
-          "name": "Trazioni (kg aggiunti)",
+          "name": "Trazioni",
           "sets": [
             {
               "reps": 5,
-              "weight": 0,
+              "weight": 83,
               "rpe": null
             },
             {
               "reps": 5,
-              "weight": 0,
+              "weight": 83,
               "rpe": null
             },
             {
               "reps": 5,
-              "weight": 0,
+              "weight": 83,
               "rpe": null
             },
             {
               "reps": 5,
-              "weight": 0,
+              "weight": 83,
               "rpe": null
             },
             {
               "reps": 5,
-              "weight": 0,
+              "weight": 83,
               "rpe": null
             }
           ],
-          "notes": "a corpo libero"
+          "notes": "peso corporeo 83 kg + zavorra 0 kg"
         },
         {
           "name": "Suitcase deadlift",
@@ -554,9 +554,9 @@
         }
       ],
       "notes": "",
-      "totalVolume": 5700,
+      "totalVolume": 7775,
       "avgIntensity": 0,
-      "analysis": "Volume totale 5.700 kg: stacco 3.300, double KB press 1.440, suitcase deadlift 960 (trazioni a corpo libero non contano nel volume). Stacco: 110 kg sono circa il 79% del tuo massimale di 140 kg. Hai fatto 30 ripetizioni contro le 21 del 21 ottobre allo stesso carico (+43% di volume), con due serie da 5: ottimo segnale. Double KB press: 30 ripetizioni per braccio con 24 kg, buon lavoro di volume per la spinta sopra la testa. Trazioni: 25 ripetizioni a corpo libero contro le 15 del 19 ottobre. Suitcase deadlift 32 kg 3x5 per lato, lavoro solido per il core. Suggerimenti: sullo stacco punta a 5 ripetizioni in tutte le serie a 110 kg prima di passare a 112,5 kg; sulla KB press prova la ladder 1-2-3-4; sulle trazioni puoi tornare alla zavorra con +2,5/5 kg."
+      "analysis": "Volume totale 7.775 kg: stacco 3.300, trazioni 2.075 (83 kg di peso corporeo x 25 ripetizioni), double KB press 1.440, suitcase deadlift 960. Stacco: 110 kg sono circa il 79% del tuo massimale di 140 kg. Hai fatto 30 ripetizioni contro le 21 del 21 ottobre allo stesso carico (+43% di volume), con due serie da 5: ottimo segnale. Trazioni: 25 ripetizioni a 83 kg contro le 15 del 19 ottobre allo stesso peso (+67% di volume); il 21 ottobre avevi fatto 15 ripetizioni a 91 kg (83 + 8), cioè 1.365 kg. Il massimale di 5 ripetizioni con +8 kg equivale a 91 kg totali. Double KB press: 30 ripetizioni per braccio con 24 kg, buon lavoro di volume per la spinta sopra la testa. Suitcase deadlift 32 kg 3x5 per lato, lavoro solido per il core. Suggerimenti: sullo stacco punta a 5 ripetizioni in tutte le serie a 110 kg prima di passare a 112,5 kg; sulla KB press prova la ladder 1-2-3-4; sulle trazioni puoi tornare alla zavorra con +2,5/5 kg (85,5-88 kg totali)."
     }
   ]
 }
