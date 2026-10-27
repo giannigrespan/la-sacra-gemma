@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --bg: #0f0f0f;
+  --card: #1a1a1a;
+  --accent: #d4af37;
+  --text: #f0f0f0;
+  --muted: #a0a0a0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--accent);
+  letter-spacing: 2px;
+}
+
+h1 span {
+  font-style: italic;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #333;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.stat-label {
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+.workouts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.workout-card {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--accent);
+}
+
+.workout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.date {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.volume {
+  color: var(--muted);
+}
+
+.exercise {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #333;
+}
+
+.exercise:last-child {
+  border: none;
+}
+
+.sets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.set-badge {
+  background: #2a2a2a;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.notes {
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+.chart-container {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  height: 400px;
+}
+
+.empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 3rem;
+  font-size: 1.2rem;
+}
