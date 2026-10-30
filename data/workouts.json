@@ -689,6 +689,159 @@
       "analysis": "Volume totale 4.152 kg: floor press 2.000 (25 ripetizioni a 80 kg), military press con kettlebell 1.152 (24 ripetizioni con 2x24 kg = 48 kg), squat frontale 1.000 (20 ripetizioni a 50 kg). Intensità media pesata circa 74% del massimale stimato. Squat frontale: 4x5 a 50 kg, 1RM stimato (Epley) 58,3 kg; 50 kg sono il 71% del massimale stimato di 70 kg (dal 5RM di 60 kg). Il 23 ottobre avevi fatto 4x4 allo stesso carico: +1 ripetizione per serie e +25% di volume (1.000 contro 800 kg). RECORD: più ripetizioni a 50 kg e miglior 1RM stimato registrato nel diario (58,3 contro 56,7 kg). Floor press: 5x5 a 80 kg, 1RM stimato 93,3 kg; 80 kg sono l'81% del massimale stimato di 99 kg (dal 5RM di 85 kg). Il 19 ottobre a 80 kg avevi chiuso 3-4-4-4-4 (19 ripetizioni, 1.520 kg): oggi tutte le serie da 5, +32% di volume. RECORD: più ripetizioni a 80 kg e miglior 1RM stimato registrato nel diario (93,3 contro 90,7 kg). Military press con kettlebell 2x24 kg: ladder 1-2-3 per 4 giri, 1RM stimato 52,8 kg; 48 kg sono circa il 69% del massimale stimato della military press col bilanciere (70 kg, confronto indicativo perché le kettlebell sono un esercizio diverso). Rispetto al 26 ottobre hai fatto un giro in meno (24 contro 30 ripetizioni, -20% di volume) con lo stesso carico massimo: nessun record, ma nessun calo di forza. Suggerimenti: nella settimana 2 del programma Grok porta il floor press a 82,5 kg cercando di nuovo 5x5, visto che 80 kg sono usciti puliti; sullo squat frontale passa a 52,5 kg per 4x5 mantenendo la profondità; sulla military press con kettlebell torna a 5 giri della ladder 1-2-3, oppure prova la ladder 1-2-3-4 se il terzo rep resta fluido.",
       "totalVolume": 4152,
       "avgIntensity": 0
+    },
+    {
+      "date": "2026-10-30",
+      "exercises": [
+        {
+          "name": "Military press con kettlebell (2x24 kg)",
+          "sets": [
+            {
+              "reps": 1,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 1,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 1,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 1,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 1,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            }
+          ],
+          "notes": "Ladder 1-2-3 x 5 serie, 2x24 kg = 48 kg"
+        },
+        {
+          "name": "Stacco",
+          "sets": [
+            {
+              "reps": 5,
+              "weight": 110,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 110,
+              "rpe": null
+            }
+          ],
+          "notes": ""
+        },
+        {
+          "name": "Floor press",
+          "sets": [
+            {
+              "reps": 6,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 80,
+              "rpe": null
+            }
+          ],
+          "notes": ""
+        },
+        {
+          "name": "Trazioni",
+          "sets": [
+            {
+              "reps": 5,
+              "weight": 83,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 83,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 83,
+              "rpe": null
+            }
+          ],
+          "notes": "Corpo libero (peso corporeo 83 kg)"
+        }
+      ],
+      "notes": "",
+      "analysis": "",
+      "totalVolume": 5705,
+      "avgIntensity": 0
     }
   ]
 }
