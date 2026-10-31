@@ -15,6 +15,7 @@ import {
 } from 'recharts';
 import workoutsData from '../data/workouts.json';
 import maxesData from '../data/maxes.json';
+import { describeSets, summarizeSets } from '../lib/setSummary';
 import { buildStrengthReport, canonicalExerciseName } from '../lib/strength';
 
 const strengthReport = buildStrengthReport(workoutsData.workouts, maxesData);
@@ -87,6 +88,14 @@ function prDescription(pr) {
   if (pr.weight) parts.push('carico più alto');
   if (pr.reps) parts.push('più ripetizioni a un carico già usato');
   return parts.join(', ');
+}
+
+function latestWorkoutDate(workouts) {
+  let latest = null;
+  for (const workout of workouts || []) {
+    if (workout?.date && (!latest || workout.date > latest)) latest = workout.date;
+  }
+  return latest;
 }
 
 function chartDomain(points, reference) {
@@ -191,11 +200,123 @@ function StrengthChart({ lift }) {
   );
 }
 
+function ExerciseRow({ exercise, stats }) {
+  const intensity = stats?.intensity;
+  const summary = summarizeSets(exercise.sets, formatNumber);
+  const description = describeSets(exercise.sets, formatNumber);
+
+  return (
+    <section className="exercise">
+      <h4 className="exercise-name">
+        <span className="exercise-name-text">{exercise.name}</span>
+        {stats?.pr && (
+          <span className="pr-badge">
+            PR
+            <span className="sr-only">: {prDescription(stats.pr)}</span>
+          </span>
+        )}
+      </h4>
+      <p className="exercise-volume">{formatNumber(exerciseVolume(exercise))} kg</p>
+      <p className="set-summary" aria-label={description}>
+        {summary}
+      </p>
+      {(stats?.e1rm > 0 || intensity) && (
+        <p className="exercise-meta">
+          {stats?.e1rm > 0 && (
+            <span className="e1rm-line">
+              e1RM {formatNumber(stats.e1rm)}
+              <span className="sr-only"> kg</span>
+            </span>
+          )}
+          {intensity && (
+            <span
+              className={`load-badge zone-${intensity.zone}`}
+              title={`${formatPercent(intensity.topSetPercent)} del massimale, media ${formatPercent(intensity.averagePercent)}, ${ZONE_LABEL[intensity.zone]}`}
+            >
+              {formatPercent(intensity.topSetPercent)}
+              <span className="sr-only">
+                {' '}del massimale, media {formatPercent(intensity.averagePercent)}, {ZONE_LABEL[intensity.zone]}
+              </span>
+            </span>
+          )}
+        </p>
+      )}
+      {exercise.notes ? <p className="exercise-notes">{exercise.notes}</p> : null}
+    </section>
+  );
+}
+
+function SessionCard({ workout, open, onToggle }) {
+  const peak = sessionPeak(workout);
+  const panelId = `session-${workout.date}`;
+  const exerciseCount = (workout.exercises || []).length;
+
+  return (
+    <article className={open ? 'session is-open' : 'session'}>
+      <h3 className="session-heading">
+        <button
+          type="button"
+          className="session-toggle"
+          aria-expanded={open}
+          aria-controls={panelId}
+          onClick={onToggle}
+        >
+          <span className="session-kicker">Sessione</span>
+          <span className="session-date">
+            <span className="session-date-text">{formatLongDate(workout.date)}</span>
+            <span className="session-chevron" aria-hidden="true" />
+          </span>
+          <span className="session-meta">
+            {exerciseCount} {exerciseCount === 1 ? 'esercizio' : 'esercizi'}
+            {peak > 0 ? ` · carico massimo ${formatNumber(peak)} kg` : ''}
+            {workout.avgIntensity > 0 ? ` · RPE ${formatNumber(workout.avgIntensity)}` : ''}
+          </span>
+          <span className="session-volume">
+            <span className="volume-num">{formatNumber(workout.totalVolume || 0)}</span>
+            <span className="volume-unit">kg di volume</span>
+          </span>
+        </button>
+      </h3>
+
+      <div id={panelId} className="session-body" hidden={!open}>
+        {workout.notes ? <p className="session-notes">{workout.notes}</p> : null}
+
+        <div className="exercises">
+          {(workout.exercises || []).map((exercise, exerciseIndex) => {
+            const stats = strengthReport.bySession[workout.date]?.[canonicalExerciseName(exercise.name)];
+            return (
+              <ExerciseRow
+                key={`${workout.date}-${exerciseIndex}`}
+                exercise={exercise}
+                stats={stats}
+              />
+            );
+          })}
+        </div>
+
+        {workout.analysis ? (
+          <details className="analysis">
+            <summary>
+              Analisi
+              <span className="sr-only"> del {formatLongDate(workout.date)}</span>
+            </summary>
+            <p>{workout.analysis}</p>
+          </details>
+        ) : null}
+      </div>
+    </article>
+  );
+}
+
 export default function Home() {
   const defaultLift = strengthReport.lifts.some((lift) => lift.canonical === 'stacco')
     ? 'stacco'
     : strengthReport.lifts[0]?.canonical;
   const [selectedLift, setSelectedLift] = useState(defaultLift);
+  const [openSessions, setOpenSessions] = useState(() => {
+    const latest = latestWorkoutDate(workoutsData.workouts);
+    return latest ? { [latest]: true } : {};
+  });
   const activeLift = strengthReport.lifts.find((lift) => lift.canonical === selectedLift) || strengthReport.lifts[0];
 
   const workouts = [...workoutsData.workouts].sort(
@@ -375,113 +496,19 @@ export default function Home() {
             <p className="empty">Nessun allenamento registrato ancora. Il bot inizierà a raccogliere i dati presto.</p>
           ) : (
             <div className="session-list">
-              {workouts.map((workout) => {
-                const peak = sessionPeak(workout);
-                return (
-                  <article key={workout.date} className="session">
-                    <header className="session-top">
-                      <div>
-                        <p className="session-kicker">Sessione</p>
-                        <h3>{formatLongDate(workout.date)}</h3>
-                        <p className="session-meta">
-                          {(workout.exercises || []).length} esercizi
-                          {peak > 0 ? ` · carico massimo ${formatNumber(peak)} kg` : ''}
-                        </p>
-                      </div>
-                      <p className="session-volume">
-                        <span className="volume-num">{formatNumber(workout.totalVolume || 0)}</span>
-                        <span className="volume-unit">kg di volume</span>
-                      </p>
-                    </header>
-
-                    {workout.avgIntensity > 0 && (
-                      <p className="intensity">Intensità media RPE {formatNumber(workout.avgIntensity)}</p>
-                    )}
-
-                    {workout.notes ? <p className="session-notes">{workout.notes}</p> : null}
-
-                    {workout.analysis ? (
-                      <section className="analysis" aria-label={`Analisi del ${formatLongDate(workout.date)}`}>
-                        <h4>Analisi</h4>
-                        <p>{workout.analysis}</p>
-                      </section>
-                    ) : null}
-
-                    <div className="exercises">
-                      {(workout.exercises || []).map((exercise, exerciseIndex) => {
-                        const stats = strengthReport.bySession[workout.date]?.[canonicalExerciseName(exercise.name)];
-                        const intensity = stats?.intensity;
-                        return (
-                        <section key={`${workout.date}-${exerciseIndex}`} className="exercise">
-                          <div className="exercise-head">
-                            <div className="exercise-title">
-                              <h4>
-                                {exercise.name}
-                                {stats?.pr && (
-                                  <span className="pr-badge">
-                                    PR
-                                    <span className="sr-only">: {prDescription(stats.pr)}</span>
-                                  </span>
-                                )}
-                              </h4>
-                              {stats?.e1rm > 0 && (
-                                <p className="e1rm-line">e1RM {formatNumber(stats.e1rm)} kg</p>
-                              )}
-                            </div>
-                            <p className="exercise-volume">{formatNumber(exerciseVolume(exercise))} kg</p>
-                          </div>
-                          {intensity && (
-                            <div className="load-meter">
-                              <div className="load-meter-row">
-                                <span className={`load-badge zone-${intensity.zone}`}>
-                                  {formatPercent(intensity.topSetPercent)} e1RM
-                                </span>
-                                <span className="load-average">media {formatPercent(intensity.averagePercent)}</span>
-                                <span className={`load-zone zone-${intensity.zone}`}>{ZONE_LABEL[intensity.zone]}</span>
-                              </div>
-                              <div
-                                className="load-bar"
-                                role="img"
-                                aria-label={`${exercise.name} ${formatPercent(intensity.topSetPercent)} e1RM, media ${formatPercent(intensity.averagePercent)}, ${ZONE_LABEL[intensity.zone]}`}
-                              >
-                                <span
-                                  className={`load-bar-fill zone-${intensity.zone}`}
-                                  style={{ width: `${Math.min(100, intensity.topSetPercent)}%` }}
-                                />
-                              </div>
-                            </div>
-                          )}
-                          <div className="table-wrap">
-                            <table>
-                              <caption className="sr-only">Serie di {exercise.name}</caption>
-                              <thead>
-                                <tr>
-                                  <th scope="col">Serie</th>
-                                  <th scope="col" className="num">Rip.</th>
-                                  <th scope="col" className="num">Carico</th>
-                                  <th scope="col" className="num">RPE</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                {(exercise.sets || []).map((set, index) => (
-                                  <tr key={`${exercise.name}-${index}`}>
-                                    <th scope="row">{index + 1}</th>
-                                    <td className="num">{set.reps}</td>
-                                    <td className="num">{formatNumber(set.weight)} kg</td>
-                                    <td className="num">{set.rpe == null ? '—' : set.rpe}</td>
-                                  </tr>
-                                ))}
-                              </tbody>
-                            </table>
-                          </div>
-                          {exercise.notes ? <p className="exercise-notes">{exercise.notes}</p> : null}
-                        </section>
-                        );
-                      })}
-                    </div>
-                  </article>
-                );
-              })}
+              {workouts.map((workout) => (
+                <SessionCard
+                  key={workout.date}
+                  workout={workout}
+                  open={Boolean(openSessions[workout.date])}
+                  onToggle={() => {
+                    setOpenSessions((current) => ({
+                      ...current,
+                      [workout.date]: !current[workout.date],
+                    }));
+                  }}
+                />
+              ))}
             </div>
           )}
         </section>
