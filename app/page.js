@@ -181,6 +181,7 @@ function StrengthChart({ lift }) {
               axisLine={false}
               tickLine={false}
               dy={8}
+              padding={{ left: 18, right: 18 }}
             />
             <YAxis
               stroke="#b4b4b8"
@@ -206,8 +207,10 @@ function StrengthChart({ lift }) {
               name="e1RM"
               stroke="#10b981"
               strokeWidth={3}
-              dot={{ r: 4, fill: '#10b981', stroke: '#0a0a0b', strokeWidth: 2 }}
-              activeDot={{ r: 6, fill: '#ecfdf5', stroke: '#10b981', strokeWidth: 2 }}
+              // Strict Mode cancels Recharts' draw animation and leaves the stroke hidden.
+              isAnimationActive={false}
+              dot={{ r: 5, fill: '#10b981', stroke: '#0a0a0b', strokeWidth: 2 }}
+              activeDot={{ r: 7, fill: '#ecfdf5', stroke: '#10b981', strokeWidth: 2 }}
             />
           </LineChart>
         </ResponsiveContainer>
