@@ -16,7 +16,7 @@ import {
 import workoutsData from '../data/workouts.json';
 import maxesData from '../data/maxes.json';
 import { describeSets, summarizeSets } from '../lib/setSummary';
-import { buildStrengthReport, canonicalExerciseName } from '../lib/strength';
+import { buildStrengthReport, canonicalExerciseName, intensityZone } from '../lib/strength';
 
 const strengthReport = buildStrengthReport(workoutsData.workouts, maxesData);
 
@@ -75,6 +75,28 @@ const ZONE_LABEL = {
 
 function formatPercent(value) {
   return `${Math.round(value)}%`;
+}
+
+function referenceLabel(reference) {
+  if (!reference) return '—';
+  const reps = Number(reference.reps);
+  const repText = Number.isInteger(reps) ? String(reps) : formatNumber(reps);
+  return `${formatNumber(reference.weight)} kg · ${repText}RM`;
+}
+
+function percentOfMax(bestE1rm, reference) {
+  if (!reference || !(reference.e1rm > 0) || !(bestE1rm > 0)) return null;
+  return (bestE1rm / reference.e1rm) * 100;
+}
+
+function repLine(record) {
+  if (!record) return '';
+  const reps = (record.repRecords || [])
+    .map((rep) => `${rep.reps}×${formatNumber(rep.weight)} kg`)
+    .join(' · ');
+  const date = record.e1rmDate ? formatMediumDate(record.e1rmDate) : '';
+  if (reps && date) return `${reps} · ${date}`;
+  return reps || date;
 }
 
 function formatMediumDate(iso) {
@@ -150,7 +172,7 @@ function StrengthChart({ lift }) {
         aria-label={`1RM stimato di ${lift.name} nel tempo. ${summary}.${referenceText}`}
       >
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={data} margin={{ top: 16, right: 12, left: 0, bottom: 0 }}>
+          <LineChart data={data} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
             <CartesianGrid stroke="rgba(255,255,255,0.06)" vertical={false} />
             <XAxis
               dataKey="date"
@@ -159,11 +181,12 @@ function StrengthChart({ lift }) {
               axisLine={false}
               tickLine={false}
               dy={8}
+              padding={{ left: 18, right: 18 }}
             />
             <YAxis
               stroke="#b4b4b8"
-              tick={{ fill: '#b4b4b8', fontSize: 12 }}
-              width={64}
+              tick={{ fill: '#b4b4b8', fontSize: 11 }}
+              width={48}
               axisLine={false}
               tickLine={false}
               domain={domain}
@@ -184,8 +207,10 @@ function StrengthChart({ lift }) {
               name="e1RM"
               stroke="#10b981"
               strokeWidth={3}
-              dot={{ r: 4, fill: '#10b981', stroke: '#0a0a0b', strokeWidth: 2 }}
-              activeDot={{ r: 6, fill: '#ecfdf5', stroke: '#10b981', strokeWidth: 2 }}
+              // Strict Mode cancels Recharts' draw animation and leaves the stroke hidden.
+              isAnimationActive={false}
+              dot={{ r: 5, fill: '#10b981', stroke: '#0a0a0b', strokeWidth: 2 }}
+              activeDot={{ r: 7, fill: '#ecfdf5', stroke: '#10b981', strokeWidth: 2 }}
             />
           </LineChart>
         </ResponsiveContainer>
@@ -197,6 +222,75 @@ function StrengthChart({ lift }) {
         ) : null}
       </ul>
     </>
+  );
+}
+
+function MaxRow({ lift, record, selected, onSelect }) {
+  const best = record?.e1rm || 0;
+  const pct = percentOfMax(best, lift.reference);
+  const zone = pct == null ? null : intensityZone(pct);
+  const detail = repLine(record);
+  const detailTitle = (record?.repRecords || [])
+    .map((rep) => `${rep.reps}×${formatNumber(rep.weight)} kg il ${formatMediumDate(rep.date)}`)
+    .join(', ');
+
+  return (
+    <button
+      type="button"
+      className={selected ? 'max-row is-selected' : 'max-row'}
+      aria-pressed={selected}
+      aria-controls="massimale-chart"
+      onClick={onSelect}
+    >
+      <span className="max-name">{lift.name}</span>
+      <span className="max-ref">
+        {referenceLabel(lift.reference)}
+        <span className="sr-only">, massimale di riferimento</span>
+      </span>
+      <span className="max-e1rm">
+        {best > 0 ? (
+          <>
+            e1RM {formatNumber(best)}
+            <span className="sr-only">
+              {' '}
+              kg
+              {record?.e1rmDate ? `, ${formatMediumDate(record.e1rmDate)}` : ''}
+              {record?.heaviest ? `, carico più alto ${formatNumber(record.heaviest)} kg` : ''}
+            </span>
+          </>
+        ) : (
+          '—'
+        )}
+      </span>
+      {pct != null && (
+        <span
+          className={`load-badge zone-${zone}`}
+          title={`${formatPercent(pct)} del massimale di riferimento (${formatNumber(lift.reference.e1rm)} kg)`}
+        >
+          {formatPercent(pct)}
+          <span className="sr-only"> del massimale</span>
+        </span>
+      )}
+      {detail ? (
+        <span className="max-detail" title={detailTitle || undefined}>
+          {detail}
+        </span>
+      ) : null}
+    </button>
+  );
+}
+
+function AccessoryRow({ record }) {
+  const detail = repLine(record);
+  return (
+    <article className="record-row">
+      <h3 className="record-name">{record.name}</h3>
+      <p className="record-e1rm">
+        e1RM {formatNumber(record.e1rm)}
+        <span className="sr-only"> kg</span>
+      </p>
+      {detail ? <p className="record-detail">{detail}</p> : null}
+    </article>
   );
 }
 
@@ -318,6 +412,9 @@ export default function Home() {
     return latest ? { [latest]: true } : {};
   });
   const activeLift = strengthReport.lifts.find((lift) => lift.canonical === selectedLift) || strengthReport.lifts[0];
+  const recordsByCanonical = new Map(strengthReport.records.map((record) => [record.canonical, record]));
+  const maxCanonicals = new Set(strengthReport.lifts.map((lift) => lift.canonical));
+  const otherRecords = strengthReport.records.filter((record) => !maxCanonicals.has(record.canonical));
 
   const workouts = [...workoutsData.workouts].sort(
     (a, b) => parseISODate(b.date).utc - parseISODate(a.date).utc
@@ -418,72 +515,40 @@ export default function Home() {
         )}
 
         {activeLift && (
-          <section className="panel chart-panel strength-panel" aria-labelledby="forza-heading">
+          <section className="panel chart-panel maxes-panel" aria-labelledby="massimali-heading">
             <div className="panel-head">
-              <h2 id="forza-heading">Forza stimata</h2>
-              <p>1RM stimato con Epley sul miglior set di ogni sessione. La linea tratteggiata è il massimale di riferimento.</p>
+              <h2 id="massimali-heading">Massimali</h2>
+              <p>Riferimento, miglior 1RM stimato e percentuale sul massimale.</p>
             </div>
-            <div className="lift-tabs" role="group" aria-label="Scegli l'alzata">
-              {strengthReport.lifts.map((lift) => {
-                const selected = lift.canonical === activeLift.canonical;
-                return (
-                  <button
-                    key={lift.canonical}
-                    type="button"
-                    aria-pressed={selected}
-                    onClick={() => setSelectedLift(lift.canonical)}
-                  >
-                    {lift.name}
-                  </button>
-                );
-              })}
+            <div className="max-list" role="group" aria-label="Scegli l'alzata">
+              {strengthReport.lifts.map((lift) => (
+                <MaxRow
+                  key={lift.canonical}
+                  lift={lift}
+                  record={recordsByCanonical.get(lift.canonical)}
+                  selected={lift.canonical === activeLift.canonical}
+                  onSelect={() => setSelectedLift(lift.canonical)}
+                />
+              ))}
             </div>
-            <div>
-              {activeLift.canonical === 'trazioni' && strengthReport.bodyweight ? (
-                <p className="lift-note">
-                  Per le trazioni il carico è il peso corporeo ({formatNumber(strengthReport.bodyweight)} kg) più la zavorra.
-                </p>
-              ) : null}
-              <StrengthChart lift={activeLift} />
+            {activeLift.canonical === 'trazioni' && strengthReport.bodyweight ? (
+              <p className="lift-note">
+                Per le trazioni il carico è il peso corporeo ({formatNumber(strengthReport.bodyweight)} kg) più la zavorra.
+              </p>
+            ) : null}
+            <div id="massimale-chart">
+              <StrengthChart key={activeLift.canonical} lift={activeLift} />
             </div>
           </section>
         )}
 
-        {strengthReport.records.length > 0 && (
+        {otherRecords.length > 0 && (
           <section className="records" aria-labelledby="record-heading">
             <h2 id="record-heading">Record personali</h2>
-            <p className="section-lead">Migliori stime, carichi e ripetizioni trovati nello storico, con la data in cui sono stati fatti.</p>
+            <p className="section-lead">Alzate senza massimale di riferimento.</p>
             <div className="record-list">
-              {strengthReport.records.map((record) => (
-                <article key={record.canonical} className="record-card">
-                  <h3>{record.name}</h3>
-                  <dl>
-                    <div>
-                      <dt>e1RM</dt>
-                      <dd>
-                        {formatNumber(record.e1rm)} kg
-                        <span>{formatMediumDate(record.e1rmDate)}</span>
-                      </dd>
-                    </div>
-                    <div>
-                      <dt>Carico</dt>
-                      <dd>
-                        {formatNumber(record.heaviest)} kg
-                        <span>{formatMediumDate(record.heaviestDate)}</span>
-                      </dd>
-                    </div>
-                  </dl>
-                  {record.repRecords.length > 0 && (
-                    <ul className="rep-records">
-                      {record.repRecords.map((rep) => (
-                        <li key={`${record.canonical}-${rep.weight}`}>
-                          {rep.reps}×{formatNumber(rep.weight)} kg
-                          <span>{formatMediumDate(rep.date)}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </article>
+              {otherRecords.map((record) => (
+                <AccessoryRow key={record.canonical} record={record} />
               ))}
             </div>
           </section>
