@@ -133,7 +133,6 @@ h2 {
 .stat,
 .panel,
 .session,
-.record-card,
 .empty {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent 30%), rgba(22, 22, 26, 0.92);
   border: 1px solid var(--line);
@@ -614,57 +613,153 @@ h2 {
   }
 }
 
-.strength-panel {
-  margin-top: 0.9rem;
+.maxes-panel {
+  padding: 0.65rem 0.4rem 0.45rem;
 }
 
-.lift-tabs {
+.maxes-panel .panel-head {
+  padding: 0 0.4rem 0.4rem 0.5rem;
+}
+
+.maxes-panel .panel-head p {
+  margin-top: 0.15rem;
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+
+.maxes-panel .chart-plot {
+  height: 148px;
+  margin-top: 0.28rem;
+}
+
+.max-list,
+.record-list {
   display: flex;
-  gap: 0.45rem;
-  overflow-x: auto;
-  padding: 0.35rem 0.7rem 0.7rem;
-  scrollbar-width: thin;
+  flex-direction: column;
+  gap: 0.28rem;
 }
 
-.lift-tabs button {
-  flex: 0 0 auto;
-  min-height: 44px;
-  padding: 0.35rem 0.85rem;
-  border-radius: 999px;
-  border: 1px solid var(--line-strong);
-  background: transparent;
-  color: var(--text);
+.max-list {
+  padding: 0 0.2rem;
+}
+
+.max-row,
+.record-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 0.45rem;
+  row-gap: 0.02rem;
+  align-items: center;
+  width: 100%;
+  background: var(--card-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.3rem 0.42rem 0.32rem;
+  color: inherit;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.max-row {
+  grid-template-areas:
+    "name badge"
+    "ref e1rm"
+    "detail detail";
   font: inherit;
-  font-weight: 700;
-  letter-spacing: 0.02em;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
-.lift-tabs button[aria-pressed='true'] {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #022c22;
+.record-row {
+  grid-template-areas:
+    "name e1rm"
+    "detail detail";
+}
+
+.max-row.is-selected {
+  border-color: rgba(16, 185, 129, 0.72);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.max-name,
+.record-name {
+  grid-area: name;
+  min-width: 0;
+  font-family: var(--font-oswald), 'Arial Narrow', sans-serif;
+  font-weight: 600;
+  font-size: 0.86rem;
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.record-name {
+  margin: 0;
+}
+
+.max-ref,
+.record-detail,
+.max-detail {
+  min-width: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.25;
+  font-variant-numeric: tabular-nums;
+}
+
+.max-ref {
+  grid-area: ref;
+}
+
+.max-detail,
+.record-detail {
+  grid-area: detail;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.max-e1rm,
+.record-e1rm {
+  grid-area: e1rm;
+  justify-self: end;
+  color: var(--accent);
+  font-family: var(--font-oswald), 'Arial Narrow', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.max-row .load-badge {
+  grid-area: badge;
+  justify-self: end;
 }
 
 .lift-note,
 .section-lead {
   color: var(--muted);
-  padding: 0 0.7rem 0.35rem;
+  padding: 0.35rem 0.5rem 0;
+  font-size: 0.8rem;
+  line-height: 1.35;
 }
 
 .section-lead {
-  padding: 0.35rem 0 0.9rem;
+  padding: 0.15rem 0 0.45rem;
   max-width: 68ch;
+  font-size: 0.88rem;
 }
 
 .chart-legend {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem 1.2rem;
-  padding: 0.35rem 0.7rem 0.45rem;
+  gap: 0.35rem 0.85rem;
+  padding: 0.15rem 0.5rem 0.1rem;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.78rem;
 }
 
 .chart-legend li {
@@ -685,77 +780,11 @@ h2 {
 }
 
 .records {
-  margin-top: 1.7rem;
+  margin-top: 1.05rem;
 }
 
-.record-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.75rem;
-}
-
-.record-card {
-  padding: 0.9rem 0.95rem 1rem;
-}
-
-.record-card h3 {
-  font-family: var(--font-oswald), 'Arial Narrow', sans-serif;
-  font-size: 1.35rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  line-height: 1.1;
-}
-
-.record-card dl {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.7rem;
-  margin-top: 0.75rem;
-}
-
-.record-card dt {
-  color: var(--muted);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.record-card dd {
-  margin-top: 0.15rem;
-  font-family: var(--font-oswald), 'Arial Narrow', sans-serif;
-  font-size: 1.45rem;
-  line-height: 1;
-  color: var(--accent);
-}
-
-.record-card dd span,
-.rep-records span {
-  display: block;
-  margin-top: 0.28rem;
-  color: var(--muted);
-  font-family: var(--font-source), 'Source Sans 3', system-ui, sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0;
-}
-
-.rep-records {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 0.8rem;
-}
-
-.rep-records li {
-  background: var(--card-2);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 0.35rem 0.55rem 0.4rem;
-  font-variant-numeric: tabular-nums;
-  font-weight: 700;
+.records > h2 {
+  margin-bottom: 0.1rem;
 }
 
 .e1rm-line {
@@ -813,18 +842,40 @@ h2 {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .lift-tabs button:hover {
+  .max-row:hover {
     border-color: rgba(16, 185, 129, 0.55);
   }
 }
 
 @media (min-width: 760px) {
-  .strength-panel {
-    margin-top: 1.1rem;
+  .maxes-panel {
+    padding: 0.85rem 0.65rem 0.6rem;
   }
 
-  .record-list {
-    grid-template-columns: 1fr 1fr;
+  .maxes-panel .chart-plot {
+    height: 176px;
+  }
+
+  .max-row {
+    grid-template-columns: auto auto minmax(0.75rem, 1fr) auto;
+    grid-template-areas: "name ref e1rm badge" "detail detail detail detail";
+    column-gap: 0.85rem;
+    padding: 0.32rem 0.55rem;
+  }
+
+  .max-ref {
+    white-space: nowrap;
+  }
+
+  .max-name,
+  .record-name {
+    font-size: 0.92rem;
+  }
+
+  .record-row {
+    grid-template-columns: minmax(10rem, 1.3fr) auto;
+    grid-template-areas: "name e1rm" "detail detail";
+    padding: 0.32rem 0.55rem;
   }
 }
 
@@ -838,7 +889,6 @@ h2 {
   .stat,
   .panel,
   .session,
-  .record-card,
   .empty {
     background: var(--card);
     backdrop-filter: none;
