@@ -842,6 +842,194 @@
       "analysis": "Volume totale 5.705 kg: floor press 1.920 (24 ripetizioni a 80 kg), military press con kettlebell 1.440 (30 ripetizioni con 2x24 kg = 48 kg), trazioni 1.245 (15 ripetizioni a 83 kg di peso corporeo), stacco 1.100 (10 ripetizioni a 110 kg). Intensità media pesata circa 77% del massimale stimato. Floor press: 4x6 a 80 kg, 1RM stimato (Epley) 96,0 kg; 80 kg sono l'81% del massimale stimato di 99 kg (dal 5RM di 85 kg). Il 28 ottobre avevi chiuso 5x5 allo stesso carico (93,3 kg stimati), il 19 ottobre 3-4-4-4-4: oggi 6 ripetizioni per serie, con volume quasi uguale al 28/10 (1.920 contro 2.000 kg, -4%) ma più ripetizioni per serie. RECORD: più ripetizioni a 80 kg (6) e miglior 1RM stimato registrato nel diario (96,0 contro 93,3 kg). Military press con kettlebell 2x24 kg: ladder 1-2-3 per 5 giri, 1RM stimato 52,8 kg; 48 kg sono circa il 69% del massimale stimato della military press col bilanciere (70 kg, confronto indicativo perché le kettlebell sono un esercizio diverso). Sei tornato ai 5 giri del 26 ottobre (30 ripetizioni, 1.440 kg) dopo i 4 del 28 ottobre: +25% di volume rispetto alla sessione precedente. Nessun record, ma il lavoro è di nuovo completo. Stacco: 2x5 a 110 kg, 1RM stimato 128,3 kg; 110 kg sono il 79% del massimale di 140 kg. Le serie da 5 a 110 kg eguagliano il miglior 1RM stimato del diario (21/10 e 26/10), quindi forza stabile. Il volume però è molto più basso: 1.100 kg contro 3.410 del 26/10 (31 ripetizioni), 2.310 del 21/10 e 1.600 del 23/10. Nessun record. Trazioni: 3x5 a corpo libero (83 kg), 1RM stimato 96,8 kg; 83 kg sono il 78% del massimale stimato di 106 kg (dal 5RM di 91 kg con +8 kg). Stesse serie da 5 del 26 ottobre ma con 3 serie invece di 5 (1.245 contro 2.075 kg, -40%); pari volume al 19/10 (5x3). Il miglior 1RM stimato resta quello del 21/10 con +8 kg (100,1 kg). Nessun record. Suggerimenti: nella settimana 2 del programma Grok porta la floor press a 82,5 kg per 5x5; con 6 ripetizioni pulite a 80 kg il carico è pronto a salire. Sullo stacco passa a 112,5 kg ma torna a un volume pieno (almeno 4-5 serie da 4-5 ripetizioni), perché 2 serie da sole non bastano a far progredire il movimento. Sulle trazioni torna a 5x5 a corpo libero oppure aggiungi +2,5 kg (85,5 kg totali) per 3x5; sulla military press con kettlebell, mantenuti i 5 giri della ladder 1-2-3, prova la 1-2-3-4.",
       "totalVolume": 5705,
       "avgIntensity": 0
+    },
+    {
+      "date": "2026-11-02",
+      "exercises": [
+        {
+          "name": "Stacco",
+          "sets": [
+            {
+              "reps": 6,
+              "weight": 110,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 110,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 110,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 110,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 110,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 110,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 110,
+              "rpe": null
+            }
+          ],
+          "notes": ""
+        },
+        {
+          "name": "Military press con kettlebell (2x24 kg)",
+          "sets": [
+            {
+              "reps": 1,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 1,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 1,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            }
+          ],
+          "notes": "Ladder 1-2-3-3-2, 1-2-3-4-2, 1-2-3-3-3 con 2x24 kg = 48 kg"
+        },
+        {
+          "name": "Trazioni",
+          "sets": [
+            {
+              "reps": 3,
+              "weight": 91,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 91,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 91,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 91,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 91,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 91,
+              "rpe": null
+            }
+          ],
+          "notes": "Zavorra +8 kg (peso corporeo 83 kg + 8 = 91 kg)"
+        },
+        {
+          "name": "Suitcase deadlift",
+          "sets": [
+            {
+              "reps": 6,
+              "weight": 32,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 32,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 32,
+              "rpe": null
+            }
+          ],
+          "notes": "32 kg, 6 ripetizioni per lato"
+        }
+      ],
+      "notes": "Settimana 2 programma Grok",
+      "totalVolume": 7983,
+      "avgIntensity": 78,
+      "analysis": "Volume totale 7.983 kg, record di sessione (prima 7.775 kg del 26 ottobre): stacco 4.180 kg (38 ripetizioni a 110 kg), military press con kettlebell 1.680 kg (35 ripetizioni con 2x24 kg), trazioni 1.547 kg (17 ripetizioni a 91 kg), suitcase deadlift 576 kg. Intensità media circa 78% del massimale: stacco 79% dell'1RM di 140 kg, trazioni con +8 kg 86% del massimale stimato, press con kettlebell 69% del military press. RECORD: stacco 6 ripetizioni a 110 kg, nuovo 1RM stimato 132 kg (prima 128,3), e per la prima volta 4 ripetizioni consecutive di press con 2x24 kg, 1RM stimato 54,4 kg (prima 52,8). Trazioni zavorrate: 17 ripetizioni a 91 kg contro le 15 del 21 ottobre, 1RM stimato stabile a 100,1 kg. Rispetto al piano di settimana 2 hai saltato squat frontale, floor press e rematore, ma hai spinto molto sullo stacco (7 serie). Suggerimenti: 1) stacco a 112,5 kg 5x5 la prossima volta, il 110 è ormai lavoro sotto massimale; 2) press con kettlebell: punta a un ladder completo 1-2-3-4 per 3 giri; 3) recupera squat frontale 52,5 kg e floor press 82,5 kg mercoledì, perché questa settimana sono rimasti indietro."
     }
   ]
 }
