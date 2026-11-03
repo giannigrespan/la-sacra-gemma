@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
-  Area,
-  AreaChart,
+  Bar,
+  BarChart,
   CartesianGrid,
+  ComposedChart,
   Line,
   LineChart,
   ReferenceLine,
@@ -17,8 +18,17 @@ import workoutsData from '../data/workouts.json';
 import maxesData from '../data/maxes.json';
 import { describeSets, summarizeSets } from '../lib/setSummary';
 import { buildStrengthReport, canonicalExerciseName, intensityZone } from '../lib/strength';
+import { buildWorkloadReport, inolZone } from '../lib/workload';
 
 const strengthReport = buildStrengthReport(workoutsData.workouts, maxesData);
+const workloadReport = buildWorkloadReport(workoutsData.workouts, maxesData);
+
+const INOL_LABEL = {
+  light: 'leggero',
+  optimal: 'ottimale',
+  hard: 'duro',
+  peak: 'molto duro',
+};
 
 const WEEKDAYS = ['domenica', 'lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', 'sabato'];
 const MONTHS = [
@@ -41,6 +51,23 @@ function formatLongDate(iso) {
 function formatShortDate(iso) {
   const { day, month } = parseISODate(iso);
   return `${String(day).padStart(2, '0')} ${MONTHS_SHORT[month - 1]}`;
+}
+
+function formatChartDate(iso) {
+  const { day, month } = parseISODate(iso);
+  return `${day}/${month}`;
+}
+
+function useMedia(query) {
+  const [matches, setMatches] = useState(false);
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    const update = () => setMatches(media.matches);
+    update();
+    media.addEventListener('change', update);
+    return () => media.removeEventListener('change', update);
+  }, [query]);
+  return matches;
 }
 
 function formatNumber(value) {
@@ -75,6 +102,31 @@ const ZONE_LABEL = {
 
 function formatPercent(value) {
   return `${Math.round(value)}%`;
+}
+
+function formatInol(value) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return '—';
+  const sign = n < 0 ? '-' : '';
+  return `${sign}${Math.abs(n).toFixed(2).replace('.', ',')}`;
+}
+
+function formatIntensity(value) {
+  if (value == null || !Number.isFinite(Number(value))) return '—';
+  return `${formatNumber(value)}%`;
+}
+
+function joinItalian(items) {
+  if (!items.length) return '';
+  if (items.length === 1) return items[0];
+  if (items.length === 2) return `${items[0]} e ${items[1]}`;
+  return `${items.slice(0, -1).join(', ')} e ${items[items.length - 1]}`;
+}
+
+function formatAxisInol(value) {
+  const rounded = Math.round(Number(value) * 10) / 10;
+  if (!Number.isFinite(rounded)) return '';
+  return Number.isInteger(rounded) ? String(rounded) : String(rounded).replace('.', ',');
 }
 
 function referenceLabel(reference) {
@@ -130,14 +182,35 @@ function chartDomain(points, reference) {
   return [Math.max(0, Math.floor(min - span * 0.4)), Math.ceil(max + span * 0.28)];
 }
 
-function VolumeTooltip({ active, payload, label }) {
+function VolumeTooltip({ active, payload }) {
   if (!active || !payload?.length) return null;
+  const point = payload[0].payload;
+  const hasLoad = point.includedReps > 0;
   return (
     <div className="chart-tooltip">
-      <p className="chart-tooltip-date">{label}</p>
-      <p className="chart-tooltip-value">{formatNumber(payload[0].value)} kg</p>
+      <p className="chart-tooltip-date">{point.date}</p>
+      <p className="chart-tooltip-value">{formatNumber(point.volume)} kg</p>
+      <p className="chart-tooltip-row">
+        Intensità <strong>{formatIntensity(point.intensity)}</strong>
+      </p>
+      <p className="chart-tooltip-row">
+        Volume relativo <strong>{hasLoad ? formatNumber(point.relativeVolume) : '—'}</strong>
+      </p>
+      <p className="chart-tooltip-row">
+        INOL <strong>{hasLoad ? formatInol(point.inol) : '—'}</strong>
+      </p>
     </div>
   );
+}
+
+function loadChartSummary(points) {
+  return points
+    .map((point) => {
+      const relative = point.includedReps > 0 ? formatNumber(point.relativeVolume) : 'non disponibile';
+      const inol = point.includedReps > 0 ? formatInol(point.inol) : 'non disponibile';
+      return `${point.date}: volume ${formatNumber(point.volume)} kg, intensità ${formatIntensity(point.intensity)}, volume relativo ${relative}, INOL ${inol}`;
+    })
+    .join('. ');
 }
 
 function StrengthTooltip({ active, payload, label }) {
@@ -340,10 +413,63 @@ function ExerciseRow({ exercise, stats }) {
   );
 }
 
-function SessionCard({ workout, open, onToggle }) {
+function SessionWorkload({ workload }) {
+  if (!workload) return null;
+  const included = workload.exercises.filter((exercise) => exercise.included);
+  const excludedNames = [];
+  const seen = new Set();
+  for (const exercise of workload.exercises) {
+    if (exercise.included || seen.has(exercise.name)) continue;
+    seen.add(exercise.name);
+    excludedNames.push(exercise.name);
+  }
+  const hasLoad = workload.includedReps > 0;
+
+  return (
+    <div className="workload">
+      <div className="workload-head">
+        <p>
+          <span className="workload-kicker">INOL</span>
+          <span className="workload-value">{hasLoad ? formatInol(workload.inol) : '—'}</span>
+        </p>
+        <p className="workload-side">
+          {workload.intensity != null ? `Intensità ${formatIntensity(workload.intensity)} · ` : ''}
+          Volume relativo {hasLoad ? formatNumber(workload.relativeVolume) : '—'}
+        </p>
+      </div>
+      {included.length > 0 && (
+        <ul className="inol-breakdown">
+          {included.map((exercise, index) => {
+            const zone = inolZone(exercise.inol);
+            return (
+              <li key={`${exercise.canonical}-${index}`}>
+                <span className="inol-name">{exercise.name}</span>
+                <span className={`load-badge inol-${zone}`}>
+                  {formatInol(exercise.inol)} {INOL_LABEL[zone]}
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+      <p className="inol-scale">
+        Per esercizio: {'<0,4'} leggero · 0,4–1 ottimale · 1–2 duro · {'>2'} molto duro
+      </p>
+      {excludedNames.length > 0 && (
+        <p className="workload-note">
+          {excludedNames.length === 1 ? 'Escluso' : 'Esclusi'} dall&apos;INOL, senza massimale di riferimento: {joinItalian(excludedNames)}.
+        </p>
+      )}
+    </div>
+  );
+}
+
+function SessionCard({ workout, workload, open, onToggle }) {
   const peak = sessionPeak(workout);
   const panelId = `session-${workout.date}`;
   const exerciseCount = (workout.exercises || []).length;
+  const rpe = Number(workout.avgIntensity);
+  const showsRpe = rpe > 0 && rpe <= 10;
 
   return (
     <article className={open ? 'session is-open' : 'session'}>
@@ -363,7 +489,8 @@ function SessionCard({ workout, open, onToggle }) {
           <span className="session-meta">
             {exerciseCount} {exerciseCount === 1 ? 'esercizio' : 'esercizi'}
             {peak > 0 ? ` · carico massimo ${formatNumber(peak)} kg` : ''}
-            {workout.avgIntensity > 0 ? ` · RPE ${formatNumber(workout.avgIntensity)}` : ''}
+            {showsRpe ? ` · RPE ${formatNumber(rpe)}` : ''}
+            {workload && workload.includedReps > 0 ? ` · INOL ${formatInol(workload.inol)}` : ''}
           </span>
           <span className="session-volume">
             <span className="volume-num">{formatNumber(workout.totalVolume || 0)}</span>
@@ -374,6 +501,7 @@ function SessionCard({ workout, open, onToggle }) {
 
       <div id={panelId} className="session-body" hidden={!open}>
         {workout.notes ? <p className="session-notes">{workout.notes}</p> : null}
+        <SessionWorkload workload={workload} />
 
         <div className="exercises">
           {(workout.exercises || []).map((exercise, exerciseIndex) => {
@@ -416,6 +544,7 @@ export default function Home() {
   const maxCanonicals = new Set(strengthReport.lifts.map((lift) => lift.canonical));
   const otherRecords = strengthReport.records.filter((record) => !maxCanonicals.has(record.canonical));
 
+  const compactChart = useMedia('(max-width: 759px)');
   const workouts = [...workoutsData.workouts].sort(
     (a, b) => parseISODate(b.date).utc - parseISODate(a.date).utc
   );
@@ -426,13 +555,22 @@ export default function Home() {
 
   const chartData = [...workouts]
     .sort((a, b) => parseISODate(a.date).utc - parseISODate(b.date).utc)
-    .map((workout) => ({
-      date: formatShortDate(workout.date),
-      volume: workout.totalVolume || 0,
-    }));
+    .map((workout) => {
+      const workload = workloadReport.byDate[workout.date];
+      const intensity = workload?.intensity;
+      return {
+        date: compactChart ? formatChartDate(workout.date) : formatShortDate(workout.date),
+        volume: workout.totalVolume || 0,
+        intensity: intensity == null ? null : Math.round(intensity * 10) / 10,
+        inol: workload?.inol || 0,
+        relativeVolume: workload?.relativeVolume || 0,
+        includedReps: workload?.includedReps || 0,
+      };
+    });
 
-  const chartLabel = chartData
-    .map((point) => `${point.date}: ${formatNumber(point.volume)} kg`)
+  const chartLabel = loadChartSummary(chartData);
+  const inolLabel = chartData
+    .map((point) => `${point.date}: INOL ${point.includedReps > 0 ? formatInol(point.inol) : 'non disponibile'}`)
     .join(', ');
 
   return (
@@ -468,49 +606,141 @@ export default function Home() {
         {chartData.length > 0 && (
           <section className="panel chart-panel" aria-labelledby="volume-heading">
             <div className="panel-head">
-              <h2 id="volume-heading">Volume nel tempo</h2>
-              <p>Chilogrammi sollevati in ogni sessione.</p>
+              <h2 id="volume-heading">Volume e intensità</h2>
+              <p>Barre in chilogrammi. La linea, sull&apos;asse destro, è l&apos;intensità media sul massimale di riferimento.</p>
             </div>
-            <div className="chart-plot" role="img" aria-label={`Grafico del volume nel tempo. ${chartLabel}`}>
+            <div className="chart-plot" role="img" aria-label={`Volume, intensità e volume relativo per sessione. ${chartLabel}`}>
               <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={chartData} margin={{ top: 12, right: 8, left: 0, bottom: 0 }}>
-                  <defs>
-                    <linearGradient id="volumeFill" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#10b981" stopOpacity={0.38} />
-                      <stop offset="100%" stopColor="#10b981" stopOpacity={0} />
-                    </linearGradient>
-                  </defs>
-                  <CartesianGrid stroke="rgba(255,255,255,0.06)" vertical={false} />
+                <ComposedChart data={chartData} margin={{ top: 20, right: 2, left: 0, bottom: 0 }} accessibilityLayer={false}>
+                  <CartesianGrid yAxisId="volume" stroke="rgba(255,255,255,0.06)" vertical={false} />
                   <XAxis
                     dataKey="date"
                     stroke="#b4b4b8"
-                    tick={{ fill: '#b4b4b8', fontSize: 12 }}
+                    tick={{ fill: '#b4b4b8', fontSize: compactChart ? 10 : 11 }}
                     axisLine={false}
                     tickLine={false}
                     dy={8}
+                    interval={0}
                   />
                   <YAxis
+                    yAxisId="volume"
                     stroke="#b4b4b8"
-                    tick={{ fill: '#b4b4b8', fontSize: 12 }}
-                    width={64}
+                    tick={{ fill: '#b4b4b8', fontSize: 11 }}
+                    width={52}
                     axisLine={false}
                     tickLine={false}
+                    domain={[0, 'auto']}
                     tickFormatter={(value) => formatNumber(value)}
                   />
-                  <Tooltip content={<VolumeTooltip />} cursor={{ stroke: 'rgba(16,185,129,0.45)', strokeWidth: 1 }} />
-                  <Area
-                    type="monotone"
+                  <YAxis
+                    yAxisId="intensity"
+                    orientation="right"
+                    stroke="#d1fae5"
+                    tick={{ fill: '#d1fae5', fontSize: 11 }}
+                    width={40}
+                    axisLine={false}
+                    tickLine={false}
+                    domain={[0, 100]}
+                    ticks={[0, 50, 100]}
+                    tickFormatter={(value) => `${value}%`}
+                  />
+                  <Tooltip content={<VolumeTooltip />} cursor={{ fill: 'rgba(16,185,129,0.08)' }} />
+                  <Bar
+                    yAxisId="volume"
                     dataKey="volume"
                     name="Volume"
-                    stroke="#10b981"
-                    strokeWidth={3}
-                    fill="url(#volumeFill)"
-                    dot={{ r: 4, fill: '#10b981', stroke: '#0a0a0b', strokeWidth: 2 }}
-                    activeDot={{ r: 6, fill: '#ecfdf5', stroke: '#10b981', strokeWidth: 2 }}
+                    fill="#10b981"
+                    fillOpacity={0.88}
+                    radius={[4, 4, 0, 0]}
+                    maxBarSize={36}
+                    isAnimationActive={false}
                   />
-                </AreaChart>
+                  <Line
+                    yAxisId="intensity"
+                    type="linear"
+                    dataKey="intensity"
+                    stroke="#04120d"
+                    strokeWidth={6}
+                    dot={false}
+                    activeDot={false}
+                    legendType="none"
+                    tooltipType="none"
+                    connectNulls={false}
+                    isAnimationActive={false}
+                  />
+                  <Line
+                    yAxisId="intensity"
+                    type="linear"
+                    dataKey="intensity"
+                    name="Intensità"
+                    stroke="#d1fae5"
+                    strokeWidth={2.5}
+                    connectNulls={false}
+                    isAnimationActive={false}
+                    dot={{ r: 3.5, fill: '#d1fae5', stroke: '#0a0a0b', strokeWidth: 2 }}
+                    activeDot={{ r: 5.5, fill: '#ecfdf5', stroke: '#10b981', strokeWidth: 2 }}
+                  />
+                </ComposedChart>
               </ResponsiveContainer>
             </div>
+            <ul className="chart-legend">
+              <li><span className="swatch swatch-bar" /> Volume, kg</li>
+              <li><span className="swatch swatch-intensity" /> Intensità media, %</li>
+            </ul>
+
+            <div className="panel-subhead">
+              <h3 id="inol-heading">INOL per sessione</h3>
+              <p>Somma di ripetizioni / (100 − intensità) per gli esercizi con massimale.</p>
+            </div>
+            <div className="chart-plot chart-plot-inol" role="img" aria-label={`INOL per sessione. ${inolLabel}`}>
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={chartData} margin={{ top: 16, right: 2, left: 0, bottom: 0 }} accessibilityLayer={false}>
+                  <CartesianGrid yAxisId="inol" stroke="rgba(255,255,255,0.06)" vertical={false} />
+                  <XAxis
+                    dataKey="date"
+                    stroke="#b4b4b8"
+                    tick={{ fill: '#b4b4b8', fontSize: compactChart ? 10 : 11 }}
+                    axisLine={false}
+                    tickLine={false}
+                    dy={8}
+                    interval={0}
+                  />
+                  <YAxis
+                    yAxisId="inol"
+                    stroke="#b4b4b8"
+                    tick={{ fill: '#b4b4b8', fontSize: 11 }}
+                    width={52}
+                    axisLine={false}
+                    tickLine={false}
+                    domain={[0, 'auto']}
+                    tickFormatter={formatAxisInol}
+                  />
+                  <YAxis
+                    yAxisId="pad"
+                    orientation="right"
+                    width={40}
+                    domain={[0, 1]}
+                    ticks={[]}
+                    tick={false}
+                    axisLine={false}
+                    tickLine={false}
+                  />
+                  <Tooltip content={<VolumeTooltip />} cursor={{ fill: 'rgba(110,231,183,0.1)' }} />
+                  <Bar
+                    yAxisId="inol"
+                    dataKey="inol"
+                    name="INOL"
+                    fill="#6ee7b7"
+                    radius={[4, 4, 0, 0]}
+                    maxBarSize={36}
+                    isAnimationActive={false}
+                  />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+            <p className="chart-note">
+              Soglie per esercizio, non per la somma di sessione: sotto 0,4 leggero, 0,4–1 ottimale, 1–2 duro, oltre 2 molto duro. Il tooltip riporta anche il volume relativo.
+            </p>
           </section>
         )}
 
@@ -565,6 +795,7 @@ export default function Home() {
                 <SessionCard
                   key={workout.date}
                   workout={workout}
+                  workload={workloadReport.byDate[workout.date]}
                   open={Boolean(openSessions[workout.date])}
                   onToggle={() => {
                     setOpenSessions((current) => ({
