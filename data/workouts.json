@@ -1030,6 +1030,72 @@
       "totalVolume": 7983,
       "avgIntensity": 78,
       "analysis": "Volume totale 7.983 kg, record di sessione (prima 7.775 kg del 26 ottobre): stacco 4.180 kg (38 ripetizioni a 110 kg), military press con kettlebell 1.680 kg (35 ripetizioni con 2x24 kg), trazioni 1.547 kg (17 ripetizioni a 91 kg), suitcase deadlift 576 kg. Intensità media circa 78% del massimale: stacco 79% dell'1RM di 140 kg, trazioni con +8 kg 86% del massimale stimato, press con kettlebell 69% del military press. RECORD: stacco 6 ripetizioni a 110 kg, nuovo 1RM stimato 132 kg (prima 128,3), e per la prima volta 4 ripetizioni consecutive di press con 2x24 kg, 1RM stimato 54,4 kg (prima 52,8). Trazioni zavorrate: 17 ripetizioni a 91 kg contro le 15 del 21 ottobre, 1RM stimato stabile a 100,1 kg. Rispetto al piano di settimana 2 hai saltato squat frontale, floor press e rematore, ma hai spinto molto sullo stacco (7 serie). Suggerimenti: 1) stacco a 112,5 kg 5x5 la prossima volta, il 110 è ormai lavoro sotto massimale; 2) press con kettlebell: punta a un ladder completo 1-2-3-4 per 3 giri; 3) recupera squat frontale 52,5 kg e floor press 82,5 kg mercoledì, perché questa settimana sono rimasti indietro."
+    },
+    {
+      "date": "2026-11-03",
+      "exercises": [
+        {
+          "name": "Military press",
+          "sets": [
+            {
+              "reps": 6,
+              "weight": 40,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 40,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 40,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 40,
+              "rpe": null
+            }
+          ],
+          "notes": "Bilanciere 4x6 a 40 kg, tecnica"
+        },
+        {
+          "name": "Pullover con disco",
+          "sets": [
+            {
+              "reps": 10,
+              "weight": 15,
+              "rpe": null
+            },
+            {
+              "reps": 10,
+              "weight": 15,
+              "rpe": null
+            },
+            {
+              "reps": 10,
+              "weight": 15,
+              "rpe": null
+            },
+            {
+              "reps": 10,
+              "weight": 15,
+              "rpe": null
+            },
+            {
+              "reps": 10,
+              "weight": 15,
+              "rpe": null
+            }
+          ],
+          "notes": "Disco da 15 kg"
+        }
+      ],
+      "notes": "Giorno di riposo attivo: stretching femorali, glutei, quadricipiti e schiena + lavoro leggero di spalle.",
+      "totalVolume": 1710,
+      "avgIntensity": 57,
+      "analysis": "Riposo attivo ben gestito. Military press 40 kg 4x6 = 960 kg al 57% del massimale (e1RM di riferimento 70 kg), e1RM della seduta 48 kg: lavoro tecnico, lontano dal cedimento. INOL military 0,56 (zona ottimale-bassa), volume relativo 13,7. Pullover 15 kg 5x10 = 750 kg, mobilità toracica e dorsali senza massimale di riferimento. Volume totale 1.710 kg, carico basso dopo la seduta pesante del 2/11 (INOL 5,35): ideale per recuperare. Stretching di femorali, glutei, quadricipiti e schiena utile prima di mercoledì. Domani: recupero squat frontale 52,5 kg e floor press 82,5 kg, INOL per esercizio tra 0,4 e 1."
     }
   ]
 }
