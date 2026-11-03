@@ -224,6 +224,53 @@ h2 {
   letter-spacing: 0.02em;
 }
 
+.chart-tooltip-row {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.35;
+  font-variant-numeric: tabular-nums;
+}
+
+.chart-tooltip-row strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.panel-subhead {
+  margin-top: 0.85rem;
+  padding: 0 0.55rem 0.15rem 0.7rem;
+}
+
+.panel-subhead h3 {
+  font-family: var(--font-oswald), 'Arial Narrow', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.panel-subhead p,
+.chart-note {
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+
+.panel-subhead p {
+  margin-top: 0.3rem;
+}
+
+.chart-note {
+  padding: 0.15rem 0.55rem 0.2rem 0.7rem;
+  font-size: 0.78rem;
+}
+
+.chart-plot-inol {
+  height: 148px;
+}
+
 .sessions {
   margin-top: 1.7rem;
 }
@@ -576,7 +623,17 @@ h2 {
   }
 
   .chart-plot {
-    height: 340px;
+    height: 300px;
+  }
+
+  .chart-plot-inol {
+    height: 168px;
+  }
+
+  .panel-subhead,
+  .chart-note {
+    padding-left: 0.85rem;
+    padding-right: 0.7rem;
   }
 
   .session {
@@ -774,6 +831,22 @@ h2 {
   border-top: 3px solid var(--accent);
 }
 
+.swatch.swatch-bar {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-top: 0;
+  border-radius: 2px;
+  background: #10b981;
+}
+
+.swatch.swatch-inol {
+  background: #6ee7b7;
+}
+
+.swatch-intensity {
+  border-top-color: #d1fae5;
+}
+
 .swatch-dashed {
   border-top-style: dashed;
   border-top-color: #6ee7b7;
@@ -839,6 +912,107 @@ h2 {
   color: #022c22;
   background: #34d399;
   border: 1px solid #34d399;
+}
+
+.load-badge.inol-light {
+  color: #a7f3d0;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(110, 231, 183, 0.35);
+}
+
+.load-badge.inol-optimal {
+  color: #d1fae5;
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.55);
+}
+
+.load-badge.inol-hard {
+  color: #022c22;
+  background: #6ee7b7;
+  border: 1px solid #6ee7b7;
+}
+
+.load-badge.inol-peak {
+  color: #022c22;
+  background: #34d399;
+  border: 1px solid #34d399;
+}
+
+.workload {
+  margin: 0.15rem 0 0.5rem;
+  padding: 0.45rem 0.5rem 0.48rem;
+  border-radius: 10px;
+  background: rgba(16, 185, 129, 0.07);
+  border: 1px solid rgba(16, 185, 129, 0.28);
+}
+
+.workload-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.1rem 0.75rem;
+}
+
+.workload-kicker {
+  margin-right: 0.4rem;
+  font-family: var(--font-oswald), 'Arial Narrow', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-size: 0.68rem;
+}
+
+.workload-value {
+  font-family: var(--font-oswald), 'Arial Narrow', sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.workload-side,
+.inol-scale,
+.workload-note {
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.workload-side {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.inol-breakdown {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+  margin-top: 0.4rem;
+}
+
+.inol-breakdown li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.inol-name {
+  min-width: 0;
+  font-family: var(--font-oswald), 'Arial Narrow', sans-serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.inol-scale,
+.workload-note {
+  margin-top: 0.35rem;
 }
 
 @media (hover: hover) and (pointer: fine) {
