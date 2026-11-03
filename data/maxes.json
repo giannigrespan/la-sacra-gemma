@@ -43,6 +43,18 @@
       "weight": 140,
       "reps": 1,
       "date": "2026-10-27"
+    },
+    {
+      "name": "Military press con kettlebell (2x24 kg)",
+      "weight": 48,
+      "reps": 8,
+      "date": "2026-11-03"
+    },
+    {
+      "name": "Suitcase deadlift",
+      "weight": 32,
+      "reps": 10,
+      "date": "2026-11-03"
     }
   ]
 }
