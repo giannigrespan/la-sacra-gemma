@@ -1096,6 +1096,143 @@
       "totalVolume": 1710,
       "avgIntensity": 57,
       "analysis": "Riposo attivo ben gestito. Military press 40 kg 4x6 = 960 kg al 57% del massimale (e1RM di riferimento 70 kg), e1RM della seduta 48 kg: lavoro tecnico, lontano dal cedimento. INOL military 0,56 (zona ottimale-bassa), volume relativo 13,7. Pullover 15 kg 5x10 = 750 kg, mobilità toracica e dorsali senza massimale di riferimento. Volume totale 1.710 kg, carico basso dopo la seduta pesante del 2/11 (INOL 5,35): ideale per recuperare. Stretching di femorali, glutei, quadricipiti e schiena utile prima di mercoledì. Domani: recupero squat frontale 52,5 kg e floor press 82,5 kg, INOL per esercizio tra 0,4 e 1."
+    },
+    {
+      "date": "2026-11-04",
+      "exercises": [
+        {
+          "name": "Military press con kettlebell (2x24 kg)",
+          "sets": [
+            {
+              "reps": 1,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 1,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 1,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 1,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            }
+          ],
+          "notes": "4 ladder 1-2-3 con 2x24 kg"
+        },
+        {
+          "name": "Dip alle parallele",
+          "sets": [
+            {
+              "reps": 5,
+              "weight": 83,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 83,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 83,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 83,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 83,
+              "rpe": null
+            }
+          ],
+          "notes": "A corpo libero (peso corporeo 83 kg), in superserie con floor press"
+        },
+        {
+          "name": "Floor press",
+          "sets": [
+            {
+              "reps": 5,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 80,
+              "rpe": null
+            }
+          ],
+          "notes": "In superserie con i dip"
+        }
+      ],
+      "notes": "Sessione breve per poco tempo. Settimana 2 programma Grok.",
+      "totalVolume": 5227,
+      "avgIntensity": 80,
+      "analysis": "Sessione breve ma densa: 5.227 kg, intensità media 80%, INOL 2,43, volume relativo 39,1. KB press 2x24: 4 ladder 1-2-3 = 24 ripetizioni (1.152 kg) al 79% del massimale (48x8, e1RM 60,8), INOL 1,14; e1RM seduta 52,8, sotto il record di 54,4 (4 ripetizioni del 2/11). Floor press 80 kg 5x5 = 2.000 kg all'81% (e1RM rif. 99,2), INOL 1,29, e1RM 93,3 come il 28/10 (il 30/10 con 4x6 era 96): carico consolidato, prossima volta 82,5 kg 5x5. Dip alle parallele 5x5 a corpo libero (83 kg) = 2.075 kg in superserie con il floor press, ottimo complemento per tricipiti e petto; senza massimale, fuori dall'INOL. Superserie di spinta intensa: spalle e tricipiti vanno lasciati riposare nella seduta gambe di domani."
     }
   ]
 }
