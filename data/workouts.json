@@ -1233,6 +1233,108 @@
       "totalVolume": 4977,
       "avgIntensity": 75,
       "analysis": "Sessione breve ma densa: 4.977 kg, intensità media circa 75%, INOL 1,99, volume relativo 36,6. KB press 2x24: 4 ladder 1-2-3 = 24 ripetizioni (1.152 kg) al 79% del massimale (48x8, e1RM 60,8), INOL 1,14; e1RM seduta 52,8, sotto il record di 54,4 (4 ripetizioni del 2/11). Floor press 70 kg 5x5 = 1.750 kg al 71% (e1RM rif. 99,2), INOL 0,85, e1RM 81,7: carico più basso del 28 e 30/10 (80 kg); consolidato, prossima volta 75 kg 5x5 o 70 kg 4x6. Dip alle parallele 5x5 a corpo libero (83 kg) = 2.075 kg in superserie con il floor press, ottimo complemento per tricipiti e petto; senza massimale, fuori dall'INOL. Superserie di spinta: spalle e tricipiti vanno lasciati riposare nella seduta gambe."
+    },
+    {
+      "date": "2026-11-05",
+      "exercises": [
+        {
+          "name": "Squat frontale",
+          "sets": [
+            {
+              "reps": 5,
+              "weight": 50,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 60,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 60,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 60,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 60,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 60,
+              "rpe": null
+            }
+          ],
+          "notes": "50 kg 5 + 60 kg 5×3"
+        },
+        {
+          "name": "Floor press",
+          "sets": [
+            {
+              "reps": 5,
+              "weight": 70,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 80,
+              "rpe": null
+            }
+          ],
+          "notes": "70 kg 5 + 80 kg 4×6"
+        },
+        {
+          "name": "Rematore",
+          "sets": [
+            {
+              "reps": 4,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 80,
+              "rpe": null
+            }
+          ],
+          "notes": "80 kg 4×4"
+        }
+      ],
+      "notes": "Settimana 2 programma Grok. Saltati box squat, Bulgarian, suitcase e trazioni.",
+      "totalVolume": 4700,
+      "avgIntensity": 80,
+      "analysis": "Sessione di 4.700 kg, intensità media 80%, INOL 3,46, volume relativo 52,3. Squat frontale: 50 kg ×5 di avvicinamento, poi 60 kg 5×3 (1.150 kg totali). Al 86% del massimale (e1RM rif. 70 kg), INOL 1,22, e1RM seduta 66 kg: salto netto rispetto ai 50 kg 4–5× del 28/10; carico consolidato, prossima volta 62,5 kg 4×3 o 60 kg 5×4. Floor press: 70 kg ×5 + 80 kg 4×6 (2.270 kg). All'81% sui set pesanti, INOL 1,41, e1RM 96 kg (in linea col 30/10 a 80×6). Record di volume sull'esercizio rispetto al 70 kg di ieri. Prossima volta 82,5 kg 4×5 o 80 kg 5×5. Rematore 80 kg 4×4 (1.280 kg) all'81% (e1RM rif. 99 da 90×3), INOL 0,83, e1RM 90,7: molto più pesante del piano a 70 kg 3×8, tecnica da tenere stretta. Saltati box squat, Bulgarian, suitcase e trazioni: la tirata pesante e lo squat alto compensano; domani o venerdì le trazioni a +8 kg 5×5 e un po' di work unilaterale se serve."
     }
   ]
 }
