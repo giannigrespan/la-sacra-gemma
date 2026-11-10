@@ -1457,6 +1457,133 @@
       "totalVolume": 2832,
       "avgIntensity": 79,
       "analysis": "Sessione di 2.832 kg, intensità media 79%, INOL 3,04, volume relativo 28,3. Press KB a un braccio, ladder di peso 20×3 / 24×2 / 28×1 per 4 giri: 544 kg per braccio, singola a 28 kg (e1RM 28,9 per braccio); al 67-93% del massimale a un braccio (30 kg), INOL 1,36. Press 2x24: 8, 6, 6 = 20 ripetizioni (960 kg) al 79% del massimale, INOL 0,95. Record: 8 ripetizioni in serie, e1RM 60,8 kg contro il precedente 54,4 del 2/11, eguagliato il massimale 48×8. Trazioni a corpo libero 6, 4, 3, 3 = 16 ripetizioni (1.328 kg) al 78%, INOL 0,73, e1RM 99,6. Record: 6 ripetizioni a corpo libero (prima 5); calo nelle ultime serie dopo il lavoro di spinta, normale. Prossima volta: press 2x24 puntare a 8, 7, 7; trazioni 5×4 a corpo libero o +8 kg 5×3. Domani bici: niente gambe pesanti fino a lunedì."
+    },
+    {
+      "date": "2026-11-10",
+      "exercises": [
+        {
+          "name": "Stacco",
+          "sets": [
+            {
+              "reps": 3,
+              "weight": 120,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 120,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 120,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 120,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 120,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 120,
+              "rpe": null
+            }
+          ],
+          "notes": "120 kg: 3,4,5,3,4,5"
+        },
+        {
+          "name": "Military press con kettlebell (2x24 kg)",
+          "sets": [
+            {
+              "reps": 1,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 1,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 48,
+              "rpe": null
+            }
+          ],
+          "notes": "2 ladder 1-2-3-4-4"
+        },
+        {
+          "name": "Trazioni",
+          "sets": [
+            {
+              "reps": 5,
+              "weight": 83,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 83,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 83,
+              "rpe": null
+            },
+            {
+              "reps": 2,
+              "weight": 83,
+              "rpe": null
+            }
+          ],
+          "notes": "A corpo libero (83 kg)"
+        }
+      ],
+      "notes": "Dopo due uscite in bici (7 e 8/11) e riposo il 9/11.",
+      "totalVolume": 5469,
+      "avgIntensity": 81,
+      "analysis": "Sessione di 5.469 kg, intensità media 81%, INOL 3,70 (duro), volume relativo 54,4. Stacco 120 kg 3,4,5,3,4,5: 24 rep, 2.880 kg, 86% del massimale (140), INOL 1,68. Le 5 rep a 120 danno un e1RM di 140 kg, record di sessione (prima 132) e pari al massimale di riferimento. Military press KB 2x24, 2 ladder 1-2-3-4-4: 28 rep, 1.344 kg, 79%, INOL 1,33; e1RM 54,4 dalle serie da 4. Trazioni a corpo libero 5,4,4,2: 15 rep, 1.245 kg, 78%, INOL 0,69; leggero calo rispetto al 6/11 (6,4,3,3, 16 rep). Prossima volta: stacco 125 kg 5×3 oppure 120 kg 6×4; press KB ladder 1-2-3-4-5 ×2; trazioni BW 5×4."
     }
   ]
 }
