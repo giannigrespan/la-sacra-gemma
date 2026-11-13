@@ -1584,6 +1584,149 @@
       "totalVolume": 5469,
       "avgIntensity": 81,
       "analysis": "Sessione di 5.469 kg, intensità media 81%, INOL 3,70 (duro), volume relativo 54,4. Stacco 120 kg 3,4,5,3,4,5: 24 rep, 2.880 kg, 86% del massimale (140), INOL 1,68. Le 5 rep a 120 danno un e1RM di 140 kg, record di sessione (prima 132) e pari al massimale di riferimento. Military press KB 2x24, 2 ladder 1-2-3-4-4: 28 rep, 1.344 kg, 79%, INOL 1,33; e1RM 54,4 dalle serie da 4. Trazioni a corpo libero 5,4,4,2: 15 rep, 1.245 kg, 78%, INOL 0,69; leggero calo rispetto al 6/11 (6,4,3,3, 16 rep). Prossima volta: stacco 125 kg 5×3 oppure 120 kg 6×4; press KB ladder 1-2-3-4-5 ×2; trazioni BW 5×4."
+    },
+    {
+      "date": "2026-11-13",
+      "exercises": [
+        {
+          "name": "Squat frontale",
+          "sets": [
+            {
+              "reps": 5,
+              "weight": 40,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 50,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 60,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 60,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 60,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 60,
+              "rpe": null
+            }
+          ],
+          "notes": "40 kg ×5, 50 kg ×5, 60 kg 4×4"
+        },
+        {
+          "name": "Military press con kettlebell (2x24 kg)",
+          "sets": [
+            {
+              "reps": 5,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            },
+            {
+              "reps": 3,
+              "weight": 48,
+              "rpe": null
+            }
+          ],
+          "notes": "5, 5, 5, 5, 4, 3, 3 (30 rep totali)"
+        },
+        {
+          "name": "Floor press",
+          "sets": [
+            {
+              "reps": 5,
+              "weight": 70,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 80,
+              "rpe": null
+            }
+          ],
+          "notes": "70 kg ×5 + 80 kg 5, 5, 5, 4"
+        },
+        {
+          "name": "Trazioni",
+          "sets": [
+            {
+              "reps": 4,
+              "weight": 83,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 83,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 83,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 83,
+              "rpe": null
+            }
+          ],
+          "notes": "A corpo libero (83 kg), 4×4"
+        }
+      ],
+      "notes": "Dopo rulli l'11/11 e riposo il 12/11.",
+      "totalVolume": 6048,
+      "avgIntensity": 78,
+      "analysis": "Sessione di 6.048 kg, intensità media 78%, INOL 4,72 (molto duro), volume relativo 75,2. Squat frontale 40×5, 50×5 e 60 kg 4×4: 26 rep, 1.410 kg, 77% medio (86% sui set da 60), INOL 1,41, e1RM 68,0 kg. Doppio record sull'esercizio nel diario: miglior e1RM (precedente 66,0 kg del 5/11) e miglior volume (prima 1.150 kg). Military press KB 2x24: 5,5,5,5,4,3,3 (30 rep, 1.440 kg) al 79% del massimale (60,8 kg), INOL 1,43, e1RM 56,0 kg; più volume e densità rispetto ai due ladder del 10/11 (28 rep, 1.344 kg). Floor press 70×5 + 80 kg 5,5,5,4: 24 rep, 1.870 kg, 79% medio (81% sugli 80 kg), INOL 1,15, e1RM 93,3 kg; leggero calo rispetto al 5/11 (80 kg 4×6, 2.270 kg, e1RM 96 kg), comprensibile dopo le 30 rep di press KB. Trazioni a corpo libero 4×4: 16 rep, 1.328 kg, 78%, INOL 0,73, e1RM 94,1 kg; più regolari rispetto al 10/11 (5,4,4,2). Prossima volta: squat frontale 60 kg 4×5 o 62,5 kg 4×3; KB press 2x24 5×5 puliti (o ladder 1-2-3-4-5 ×2); floor press 80 kg 4×5 (magari prima del press KB); trazioni BW 5×4."
     }
   ]
 }
