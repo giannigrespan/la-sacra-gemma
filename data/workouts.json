@@ -1889,6 +1889,118 @@
       "totalVolume": 6297,
       "avgIntensity": 80,
       "analysis": "Sessione di 6.297 kg, intensità media 80%, INOL 4,75 (molto duro), volume relativo 65,2, nonostante il raffreddore. Stacco 90×5 ×2, 120×3, poi 125 kg 6×3: 31 rep, 3.510 kg, 81% medio (89% sui set da 125), INOL 2,17, e1RM 137,5 kg. Record: 125 kg è il carico di lavoro più alto nel diario (prima 120 kg del 10/11), con 18 rep invece delle 15 previste (5×3). Military press KB 2x24, 3 ladder 1-2-3-4-5 / 1-2-3-4-3 / 1-2-3-4-3: 41 rep, 1.968 kg, 79%, INOL 1,95, e1RM 56,0 kg. Record di volume sull'esercizio (prima 35 rep e 1.680 kg del 2/11), e prima serie da 5 dentro un ladder. Trazioni +8 kg (91 kg) 3×3: 9 rep, 819 kg, 86%, INOL 0,63, e1RM 100,1 kg, pari al miglior risultato con zavorra. Prossima volta: stacco 130 kg 5×2 oppure 125 kg 5×4; press KB 3 ladder fino a 5 completi; trazioni +8 kg 4×3. Con il raffreddore, domani riposo o bici facile."
+    },
+    {
+      "date": "2026-11-24",
+      "exercises": [
+        {
+          "name": "Stacco",
+          "sets": [
+            {
+              "reps": 5,
+              "weight": 120,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 120,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 120,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 120,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 120,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 120,
+              "rpe": null
+            }
+          ],
+          "notes": "120 kg 6×5"
+        },
+        {
+          "name": "Military press",
+          "sets": [
+            {
+              "reps": 5,
+              "weight": 50,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 50,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 50,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 50,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 50,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 50,
+              "rpe": null
+            }
+          ],
+          "notes": "Bilanciere 50 kg 6×5"
+        },
+        {
+          "name": "Trazioni",
+          "sets": [
+            {
+              "reps": 4,
+              "weight": 83,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 83,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 83,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 83,
+              "rpe": null
+            },
+            {
+              "reps": 4,
+              "weight": 83,
+              "rpe": null
+            }
+          ],
+          "notes": "A corpo libero (83 kg) 5×4"
+        }
+      ],
+      "notes": "Allenamento in trasferta a Milano, non nella palestra di casa.",
+      "totalVolume": 6760,
+      "avgIntensity": 78,
+      "analysis": "Volume totale 6.760 kg, intensità media 78%, INOL di seduta 4,07 (molto duro). Stacco 120 kg 6×5: 3.600 kg, 30 reps all'86%, INOL 2,10, e1RM 140 kg (eguagliato il miglior e1RM del diario); più reps di sempre a 120 kg (prima 24 il 10/11), secondo volume di sempre dopo i 4.180 kg del 2/11. Military press bilanciere 50 kg 6×5: 1.500 kg, record di volume sul press con bilanciere (prima 1.250 kg il 21/10), 71%, INOL 1,05, e1RM 58,3 kg. Trazioni a corpo libero 5×4: 1.660 kg, 20 reps al 78%, INOL 0,92 (ottimale), e1RM 94,1 kg. Seduta fatta in trasferta a Milano. Suggerimenti: stacco 125 kg 5×4 o 130 kg 5×2; military press 52,5 kg 6×5 o 55 kg 5×5; trazioni 5×5 a corpo libero o +8 kg 4×3."
     }
   ]
 }
