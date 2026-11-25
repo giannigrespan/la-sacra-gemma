@@ -2001,6 +2001,134 @@
       "totalVolume": 6760,
       "avgIntensity": 78,
       "analysis": "Volume totale 6.760 kg, intensità media 78%, INOL di seduta 4,07 (molto duro). Stacco 120 kg 6×5: 3.600 kg, 30 reps all'86%, INOL 2,10, e1RM 140 kg (eguagliato il miglior e1RM del diario); più reps di sempre a 120 kg (prima 24 il 10/11), secondo volume di sempre dopo i 4.180 kg del 2/11. Military press bilanciere 50 kg 6×5: 1.500 kg, record di volume sul press con bilanciere (prima 1.250 kg il 21/10), 71%, INOL 1,05, e1RM 58,3 kg. Trazioni a corpo libero 5×4: 1.660 kg, 20 reps al 78%, INOL 0,92 (ottimale), e1RM 94,1 kg. Seduta fatta in trasferta a Milano. Suggerimenti: stacco 125 kg 5×4 o 130 kg 5×2; military press 52,5 kg 6×5 o 55 kg 5×5; trazioni 5×5 a corpo libero o +8 kg 4×3."
+    },
+    {
+      "date": "2026-11-25",
+      "exercises": [
+        {
+          "name": "Squat frontale",
+          "sets": [
+            {
+              "reps": 6,
+              "weight": 60,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 60,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 60,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 60,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 60,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 60,
+              "rpe": null
+            }
+          ],
+          "notes": ""
+        },
+        {
+          "name": "Floor press",
+          "sets": [
+            {
+              "reps": 6,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 80,
+              "rpe": null
+            }
+          ],
+          "notes": ""
+        },
+        {
+          "name": "Rematore",
+          "sets": [
+            {
+              "reps": 6,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 80,
+              "rpe": null
+            },
+            {
+              "reps": 6,
+              "weight": 80,
+              "rpe": null
+            }
+          ],
+          "notes": ""
+        },
+        {
+          "name": "Trazioni",
+          "sets": [
+            {
+              "reps": 5,
+              "weight": 83,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 83,
+              "rpe": null
+            },
+            {
+              "reps": 5,
+              "weight": 83,
+              "rpe": null
+            }
+          ],
+          "notes": "Corpo libero (83 kg)"
+        }
+      ],
+      "notes": "",
+      "totalVolume": 8205,
+      "avgIntensity": 82,
+      "analysis": "Volume 8.205 kg, intensità media 82%, INOL 6.32. Record: squat frontale 60 kg 6x6 (2.160 kg, e1RM 72 nuovo massimo), floor press 80 kg 6x6 (2.880 kg, record volume), rematore 80 kg 4x6 (1.920 kg, record volume e 6 reps a 80 kg oltre il 4RM). Trazioni BW 3x5 1.245 kg. Prossima: squat frontale 62,5 kg 5x5, floor press 82,5 kg 5x5, rematore 82,5 kg 4x5, trazioni +8 kg 4x3."
     }
   ]
 }
